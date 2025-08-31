@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		F59F431D2E64AF1E004CEF3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F59F43072E64AF18004CEF3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F59F430E2E64AF18004CEF3A;
+			remoteInfo = "Kuwait Driving Test";
+		};
+		F59F43272E64AF1E004CEF3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F59F43072E64AF18004CEF3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F59F430E2E64AF18004CEF3A;
+			remoteInfo = "Kuwait Driving Test";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F59F430F2E64AF18004CEF3A /* Kuwait Driving Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kuwait Driving Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F59F431C2E64AF1E004CEF3A /* Kuwait Driving TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kuwait Driving TestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F59F43262E64AF1E004CEF3A /* Kuwait Driving TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kuwait Driving TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F59F43112E64AF18004CEF3A /* Kuwait Driving Test */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Kuwait Driving Test";
+			sourceTree = "<group>";
+		};
+		F59F431F2E64AF1E004CEF3A /* Kuwait Driving TestTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Kuwait Driving TestTests";
+			sourceTree = "<group>";
+		};
+		F59F43292E64AF1E004CEF3A /* Kuwait Driving TestUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Kuwait Driving TestUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F59F430C2E64AF18004CEF3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F59F43192E64AF1E004CEF3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F59F43232E64AF1E004CEF3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F59F43062E64AF18004CEF3A = {
+			isa = PBXGroup;
+			children = (
+				F59F43112E64AF18004CEF3A /* Kuwait Driving Test */,
+				F59F431F2E64AF1E004CEF3A /* Kuwait Driving TestTests */,
+				F59F43292E64AF1E004CEF3A /* Kuwait Driving TestUITests */,
+				F59F43102E64AF18004CEF3A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F59F43102E64AF18004CEF3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F59F430F2E64AF18004CEF3A /* Kuwait Driving Test.app */,
+				F59F431C2E64AF1E004CEF3A /* Kuwait Driving TestTests.xctest */,
+				F59F43262E64AF1E004CEF3A /* Kuwait Driving TestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F59F430E2E64AF18004CEF3A /* Kuwait Driving Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F59F43302E64AF1E004CEF3A /* Build configuration list for PBXNativeTarget "Kuwait Driving Test" */;
+			buildPhases = (
+				F59F430B2E64AF18004CEF3A /* Sources */,
+				F59F430C2E64AF18004CEF3A /* Frameworks */,
+				F59F430D2E64AF18004CEF3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F59F43112E64AF18004CEF3A /* Kuwait Driving Test */,
+			);
+			name = "Kuwait Driving Test";
+			packageProductDependencies = (
+			);
+			productName = "Kuwait Driving Test";
+			productReference = F59F430F2E64AF18004CEF3A /* Kuwait Driving Test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F59F431B2E64AF1E004CEF3A /* Kuwait Driving TestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F59F43332E64AF1E004CEF3A /* Build configuration list for PBXNativeTarget "Kuwait Driving TestTests" */;
+			buildPhases = (
+				F59F43182E64AF1E004CEF3A /* Sources */,
+				F59F43192E64AF1E004CEF3A /* Frameworks */,
+				F59F431A2E64AF1E004CEF3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F59F431E2E64AF1E004CEF3A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F59F431F2E64AF1E004CEF3A /* Kuwait Driving TestTests */,
+			);
+			name = "Kuwait Driving TestTests";
+			packageProductDependencies = (
+			);
+			productName = "Kuwait Driving TestTests";
+			productReference = F59F431C2E64AF1E004CEF3A /* Kuwait Driving TestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F59F43252E64AF1E004CEF3A /* Kuwait Driving TestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F59F43362E64AF1E004CEF3A /* Build configuration list for PBXNativeTarget "Kuwait Driving TestUITests" */;
+			buildPhases = (
+				F59F43222E64AF1E004CEF3A /* Sources */,
+				F59F43232E64AF1E004CEF3A /* Frameworks */,
+				F59F43242E64AF1E004CEF3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F59F43282E64AF1E004CEF3A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F59F43292E64AF1E004CEF3A /* Kuwait Driving TestUITests */,
+			);
+			name = "Kuwait Driving TestUITests";
+			packageProductDependencies = (
+			);
+			productName = "Kuwait Driving TestUITests";
+			productReference = F59F43262E64AF1E004CEF3A /* Kuwait Driving TestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F59F43072E64AF18004CEF3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					F59F430E2E64AF18004CEF3A = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					F59F431B2E64AF1E004CEF3A = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = F59F430E2E64AF18004CEF3A;
+					};
+					F59F43252E64AF1E004CEF3A = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = F59F430E2E64AF18004CEF3A;
+					};
+				};
+			};
+			buildConfigurationList = F59F430A2E64AF18004CEF3A /* Build configuration list for PBXProject "Kuwait Driving Test" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F59F43062E64AF18004CEF3A;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F59F43102E64AF18004CEF3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F59F430E2E64AF18004CEF3A /* Kuwait Driving Test */,
+				F59F431B2E64AF1E004CEF3A /* Kuwait Driving TestTests */,
+				F59F43252E64AF1E004CEF3A /* Kuwait Driving TestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F59F430D2E64AF18004CEF3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F59F431A2E64AF1E004CEF3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F59F43242E64AF1E004CEF3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F59F430B2E64AF18004CEF3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F59F43182E64AF1E004CEF3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F59F43222E64AF1E004CEF3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F59F431E2E64AF1E004CEF3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F59F430E2E64AF18004CEF3A /* Kuwait Driving Test */;
+			targetProxy = F59F431D2E64AF1E004CEF3A /* PBXContainerItemProxy */;
+		};
+		F59F43282E64AF1E004CEF3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F59F430E2E64AF18004CEF3A /* Kuwait Driving Test */;
+			targetProxy = F59F43272E64AF1E004CEF3A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F59F432E2E64AF1E004CEF3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7P4R7G65DF;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F59F432F2E64AF1E004CEF3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 7P4R7G65DF;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F59F43312E64AF1E004CEF3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7P4R7G65DF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tarek.Kuwait-Driving-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F59F43322E64AF1E004CEF3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7P4R7G65DF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tarek.Kuwait-Driving-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F59F43342E64AF1E004CEF3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7P4R7G65DF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tarek.Kuwait-Driving-TestTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kuwait Driving Test.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kuwait Driving Test";
+			};
+			name = Debug;
+		};
+		F59F43352E64AF1E004CEF3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7P4R7G65DF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tarek.Kuwait-Driving-TestTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kuwait Driving Test.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kuwait Driving Test";
+			};
+			name = Release;
+		};
+		F59F43372E64AF1E004CEF3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7P4R7G65DF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tarek.Kuwait-Driving-TestUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Kuwait Driving Test";
+			};
+			name = Debug;
+		};
+		F59F43382E64AF1E004CEF3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7P4R7G65DF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tarek.Kuwait-Driving-TestUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Kuwait Driving Test";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F59F430A2E64AF18004CEF3A /* Build configuration list for PBXProject "Kuwait Driving Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F59F432E2E64AF1E004CEF3A /* Debug */,
+				F59F432F2E64AF1E004CEF3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F59F43302E64AF1E004CEF3A /* Build configuration list for PBXNativeTarget "Kuwait Driving Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F59F43312E64AF1E004CEF3A /* Debug */,
+				F59F43322E64AF1E004CEF3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F59F43332E64AF1E004CEF3A /* Build configuration list for PBXNativeTarget "Kuwait Driving TestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F59F43342E64AF1E004CEF3A /* Debug */,
+				F59F43352E64AF1E004CEF3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F59F43362E64AF1E004CEF3A /* Build configuration list for PBXNativeTarget "Kuwait Driving TestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F59F43372E64AF1E004CEF3A /* Debug */,
+				F59F43382E64AF1E004CEF3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F59F43072E64AF18004CEF3A /* Project object */;
+}
