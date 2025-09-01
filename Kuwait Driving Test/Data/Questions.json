@@ -1,0 +1,2252 @@
+[
+  {
+    "id": 1,
+    "text": "It is permissible to drive a vehicle without brakes",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 2,
+    "text": "The vehicle driver may drive less than the specified minimum speed limit without justification",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 3,
+    "text": "Priority must be given to those coming from the main road in case there is a secondary road",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 4,
+    "text": "When can you use a mobile phone while you are in the vehicle?",
+    "answers": [
+      "When traffic stops or at a road intersection",
+      "Only when the traffic is not congested",
+      "Only when you have parked the vehicle in a safe place"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": true,
+    "tf": false
+  },
+  {
+    "id": 5,
+    "text": "This Sign Means:",
+    "answers": [
+      "Ambulance Center",
+      "Taxi Stand",
+      "Bus Stop"
+    ],
+    "correctIndex": 0,
+    "imageName": "Ambulance",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 6,
+    "text": "This Sign Means:",
+    "answers": [
+      "Stop — No Passing Allowed",
+      "Caution",
+      "Give Way",
+      "Reduce Speed"
+    ],
+    "correctIndex": 1,
+    "imageName": "Caution",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 7,
+    "text": "This Sign Means:",
+    "answers": [
+      "Proceed Straight Ahead",
+      "Mandatory Left Turn",
+      "U-Turn Ahead"
+    ],
+    "correctIndex": 0,
+    "imageName": "Straight",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 8,
+    "text": "This Sign means:",
+    "answers": [
+      "Parking for everyone",
+      "Disabled parking",
+      "Bicycle parking"
+    ],
+    "correctIndex": 1,
+    "imageName": "Disabled",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 9,
+    "text": "Who has the right of way at equally controlled intersections?",
+    "answers": [
+      "For vehicles approaching from the left side",
+      "For vehicles approaching from the right side",
+      "Equal priority"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 10,
+    "text": "The meaning of the traffic sign shown is:",
+    "answers": [
+      "Side road ahead (merging)",
+      "Left curve",
+      "Left turn is allowed",
+      "Main road ahead"
+    ],
+    "correctIndex": 0,
+    "imageName": "Merge",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 11,
+    "text": "What is the designated speed limit in residential inner streets (between neighborhoods) on two-way streets?",
+    "answers": [
+      "30 km/h",
+      "45 km/h",
+      "25 km/h"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 12,
+    "text": "Examples of alternative penalties that may be issued by court ruling:",
+    "answers": [
+      "Community service",
+      "Repairing the damage",
+      "All of the above"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 13,
+    "text": "In the event of a property damage accident, the correct procedure is:",
+    "answers": [
+      "Stopping in the street and waiting for the patrol",
+      "Move the vehicles to a safe place off the road, then contact the Ministry of Interior Operations",
+      "Getting out of the car and leaving it on the street"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 14,
+    "text": "The hazard warning lights shall be used in the following situations:",
+    "answers": [
+      "Adverse weather conditions",
+      "Complete stop",
+      "All of the above"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 15,
+    "text": "When is it permissible to drive a motor vehicle without insurance?",
+    "answers": [
+      "Driving it to the garage for repair",
+      "It is strictly prohibited to drive it without insurance; it may only be transported by tow truck",
+      "It is allowed to drive it without insurance for short distances"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 16,
+    "text": "When is it permissible for a vehicle to tow objects on public roads?",
+    "answers": [
+      "If the person has a clean violation record",
+      "If the used vehicle accommodates 5 passengers or more",
+      "If the vehicle is licensed by the General Department of Traffic for that"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 17,
+    "text": "A vehicle may be confiscated by final court ruling in the following cases:",
+    "answers": [
+      "Committing violations under Article 33 of the Traffic Law",
+      "Committing violations according to Article 33 (repeated) of the Traffic Law",
+      "Committing violations in accordance with Article 34 of the Traffic Law"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 18,
+    "text": "The maximum speed limit for small cars on the Sixth Ring Road is:",
+    "answers": [
+      "120 km/h",
+      "100 km/h",
+      "80 km/h",
+      "40 km/h"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 19,
+    "text": "It is recommended to replace the car brakes every:",
+    "answers": [
+      "3 months",
+      "6 months",
+      "9 months",
+      "12 months"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 20,
+    "text": "The function of the car battery is:",
+    "answers": [
+      "Starting the engine",
+      "Moving the vehicle",
+      "Gear shifting",
+      "Moving and transporting the vehicle"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 21,
+    "text": "Vehicles drivers and other road users must give way for emergency vehicles",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 22,
+    "text": "The vehicle may be parked in a designated pedestrian crossings and sidewalks",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 23,
+    "text": "It is permissible to pass at heights where there is no visibility",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 24,
+    "text": "Who is responsible if a vehicle is handed over to a person without a driving license?",
+    "answers": [
+      "The vehicle owner who handed over the vehicle to the person",
+      "No liability on any party",
+      "The person driving the vehicle only"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": true,
+    "tf": false
+  },
+  {
+    "id": 25,
+    "text": "If you see an ambulance with its hazard lights on, what should you do?",
+    "answers": [
+      "Give way immediately while paying attention to other vehicles",
+      "Increase the speed of my vehicle to avoid blocking traffic",
+      "Use the vehicle`s horn to warn other vehicles",
+      "I pay no attention to him and let him act as he wishes"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 26,
+    "text": "Who is responsible for committing public decency violations in the vehicle?",
+    "answers": [
+      "All passengers in the vehicle",
+      "Vehicle owner",
+      "Vehicle driver",
+      "The offender, whether the driver or the passenger"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 27,
+    "text": "This Sign Means:",
+    "answers": [
+      "Proceed Straight Ahead",
+      "Give Way",
+      "Stop Immediately",
+      "Stop — No Entry Allowed"
+    ],
+    "correctIndex": 1,
+    "imageName": "GiveWay",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 28,
+    "text": "This Sign Means:",
+    "answers": [
+      "Overtaking Trucks Prohibited",
+      "U-Turn Prohibited",
+      "Side Road to the Left",
+      "Left Turn Permitted"
+    ],
+    "correctIndex": 1,
+    "imageName": "UTurnProhibited",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 29,
+    "text": "This Sign Means:",
+    "answers": [
+      "Side Road Ahead",
+      "Left Curve Ahead",
+      "Left Turn Permitted",
+      "Unpaved Road"
+    ],
+    "correctIndex": 3,
+    "imageName": "Unpaved",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 30,
+    "text": "When can you drive construction vehicles on public roads?",
+    "answers": [
+      "Everyone who has a construction license",
+      "A prior license must be obtained from the General Department of Traffic, and the driver must hold a construction license",
+      "Only after midnight"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 31,
+    "text": "The penalty for abandoning and leaving a motor vehicle neglected on the side of the road is:",
+    "answers": [
+      "Imprisonment for a period not exceeding one week and a fine not exceeding KD 50, or either of these two penalties",
+      "Imprisonment for a period not exceeding one week and a fine not exceeding KD 25, or either of these two penalties",
+      "A fine not exceeding KD 20",
+      "A fine not exceeding KD 75 and not less than KD 45"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 32,
+    "text": "Under what conditions can you drive a motor vehicle without lights?",
+    "answers": [
+      "The street must be fully illuminated",
+      "Driving inside residential areas",
+      "Headlights must be switched on from sunset under all circumstances"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 33,
+    "text": "Where is it allowed to drive small and large buggies?",
+    "answers": [
+      "On the highway",
+      "Near residential areas",
+      "Coastal areas",
+      "On unpaved roads and desert areas"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 34,
+    "text": "Artificial Intelligence cameras detect:",
+    "answers": [
+      "Failure to fasten the seatbelt by the driver and front seat passengers",
+      "Using a handheld mobile phone while driving (driver only)",
+      "All of the above"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 35,
+    "text": "The penalty for running a red traffic light is:",
+    "answers": [
+      "Imprisonment for a period not exceeding three months and a fine not exceeding KD 300, or either of these two penalties",
+      "Imprisonment for a period not exceeding one month and a fine not exceeding KD 150, or either of these two penalties",
+      "Imprisonment for a period not exceeding two months and a fine not exceeding KD 75, or either of these two penalties",
+      "Imprisonment for a period exceeding one year and not exceeding three years and a fine not less than KD 600 and not exceeding KD 1,000, or either of these two penalties"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 36,
+    "text": "Anyone exceeding the maximum prescribed speed limit will be penalized:",
+    "answers": [
+      "Imprisonment for a period not exceeding three months and a fine not exceeding KD 100, or either of these two penalties",
+      "Imprisonment for a period not exceeding one month and a fine not exceeding KD 150 and not less than KD 70, or either of these two penalties",
+      "Imprisonment for a period not exceeding two months and a fine not exceeding KD 100, or either of these two penalties",
+      "Imprisonment for a period exceeding one year and not exceeding three years and a fine not less than KD 600 and not exceeding KD 1,000, or either of these two penalties"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 37,
+    "text": "The function of the radiator is:",
+    "answers": [
+      "Cooling the engine",
+      "Lubricating the gearbox (transmission)",
+      "Cooling the transmission (gearbox) and cooling the air inside the vehicle"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 38,
+    "text": "The function of the windshield is:",
+    "answers": [
+      "For decoration",
+      "Protect the vehicle from damage",
+      "No benefit",
+      "Reduce the injury rate"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 39,
+    "text": "The vehicle may be parked on the side of the road next to another parked vehicle.",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 40,
+    "text": "The driver of a vehicle who is being passed by another vehicle must slow down while remaining on the right side",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 41,
+    "text": "Cases where a vehicle may be impounded according to Article 207 of the Executive Bylaw of the Traffic Law:",
+    "answers": [
+      "Exceeding the maximum permitted speed limit by 30 km/h",
+      "Driving against the direction of traffic on internal roads",
+      "All of the above"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": true,
+    "tf": false
+  },
+  {
+    "id": 42,
+    "text": "This Sign Means:",
+    "answers": [
+      "Rough Road",
+      "Speed Bump (Natural Hump)",
+      "Speed Hump (Artificial)",
+      "Slippery Road"
+    ],
+    "correctIndex": 2,
+    "imageName": "SpeedHump",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 43,
+    "text": "This Sign Means:",
+    "answers": [
+      "Customs Ahead",
+      "No Waiting Allowed",
+      "Stop — Police Checkpoint"
+    ],
+    "correctIndex": 1,
+    "imageName": "NoParking",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 44,
+    "text": "A curb painted blue and white means:",
+    "answers": [
+      "No stopping and waiting",
+      "Bus stop",
+      "Overtaking allowed",
+      "Parking allowed"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 45,
+    "text": "What is the maximum period for impounding a vehicle under Article 207 of the Executive Bylaw of the Traffic Law?",
+    "answers": [
+      "1 month",
+      "2 months",
+      "3 months"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 46,
+    "text": "When you see a vehicle on fire, what should you do?",
+    "answers": [
+      "Drive normally as if you saw nothing",
+      "Park at a safe distance and contact the Ministry of Interior Operations at 112",
+      "Use the fire extinguisher inside the vehicle and try to extinguish the fire",
+      "Block the road and wait for assistance to arrive"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 47,
+    "text": "Who is required to fasten the seatbelt while driving?",
+    "answers": [
+      "Driver only",
+      "Driver and front seat passenger",
+      "Front seat passenger only"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 48,
+    "text": "Using a private vehicle to transport passengers for fare is punishable by:",
+    "answers": [
+      "Imprisonment for a period not exceeding one month and a fine not exceeding KD 75, or either of these two penalties",
+      "Imprisonment for a period not exceeding 25 days and a fine not exceeding KD 40, or either of these two penalties",
+      "Imprisonment for a period not exceeding two months and a fine not exceeding KD 50, or either of these two penalties",
+      "Imprisonment for a period not exceeding three years and not less than one year, and a fine not exceeding KD 1000 and not less than KD 600, or either of these two penalties"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 49,
+    "text": "According to Article 44 of the Traffic Law, any police officer may arrest a person who has committed an act of:",
+    "answers": [
+      "Driving a vehicle without its plate issued by the General Department of Traffic",
+      "Driving “buggies” in unauthorized areas",
+      "All of the above"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 50,
+    "text": "One of the factors causing vehicle rollover is:",
+    "answers": [
+      "Starter Malfunction",
+      "Engine Malfunction",
+      "Tire Damage",
+      "Gearbox (Transmission) Malfunction"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 51,
+    "text": "It is permissible to drive Motor vehicles without driving license",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 52,
+    "text": "To close the road for works, a permit must be obtained from the General Traffic Department",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 53,
+    "text": "The driver must not exceed the specified speed limit",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 54,
+    "text": "When is it permissible to enter the forbidden area marked with intersecting lines at a traffic light intersection when the signal is yellow?",
+    "answers": [
+      "If the traffic light is green and the road is congested",
+      "It is not allowed to enter the restricted area if it is blocked and congested, even if the traffic light is green",
+      "As long as the traffic light is green, you may enter even if the way ahead is blocked"
+    ],
+    "correctIndex": 1,
+    "imageName": "Intersection",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 55,
+    "text": "This Sign Means:",
+    "answers": [
+      "Bus Entry Prohibited",
+      "No Truck Entry",
+      "Overtaking Trucks Prohibited",
+      "All Motor Vehicles Prohibited"
+    ],
+    "correctIndex": 3,
+    "imageName": "AllVehiclesProhibited",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 56,
+    "text": "This Sign Means:",
+    "answers": [
+      "Pedestrian Crossing Prohibited",
+      "Road Works Ahead",
+      "Children Crossing",
+      "Caution — Pedestrian Crossing Ahead"
+    ],
+    "correctIndex": 3,
+    "imageName": "PedXing",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 57,
+    "text": "This Sign Means:",
+    "answers": [
+      "Road Hazard Ahead",
+      "Bus Stop Ahead",
+      "U-Turn Ahead"
+    ],
+    "correctIndex": 2,
+    "imageName": "UTurnAhead",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 58,
+    "text": "This Sign Means:",
+    "answers": [
+      "Give Way",
+      "Stop Sign",
+      "Traffic Light Ahead"
+    ],
+    "correctIndex": 2,
+    "imageName": "TrafficLightAhead",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 59,
+    "text": "This Sign Means:",
+    "answers": [
+      "Slippery Road",
+      "Traffic Light Ahead",
+      "Caution — Roundabout Ahead",
+      "Overtaking Prohibited"
+    ],
+    "correctIndex": 2,
+    "imageName": "RoundaboutAhead",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 60,
+    "text": "Yellow lines in the middle of the street in this form mean:",
+    "answers": [
+      "Dividing zone between two directions",
+      "Overtaking prohibited",
+      "Strictly no overtaking",
+      "Lane boundary line"
+    ],
+    "correctIndex": 0,
+    "imageName": "DividingZone",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 61,
+    "text": "When can you use a mobile phone while driving?",
+    "answers": [
+      "When traffic stops or at road intersections",
+      "Only when traffic flow is light",
+      "Only when the vehicle has been parked in a safe place"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 62,
+    "text": "Driving a motor vehicle without proper lighting at night is punishable by:",
+    "answers": [
+      "Imprisonment for a period not exceeding one week and a fine not exceeding KD 25, or either of these two penalties",
+      "Imprisonment for a period not exceeding one week and a fine not exceeding KD 50, or either of these two penalties",
+      "Fine not exceeding KD 20",
+      "Fine not exceeding KD 75 and not less than KD 45"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 63,
+    "text": "Intentionally stopping the vehicle in the middle of the public road and refusing to move it until it was towed by police is punishable by:",
+    "answers": [
+      "Imprisonment for a period not exceeding two months and a fine not exceeding KD 50, or either of these two penalties",
+      "Imprisonment for a period not exceeding one month and a fine not exceeding KD 75, or either of these two penalties",
+      "Imprisonment for a period not exceeding 25 days and a fine not exceeding KD 40, or either of these two penalties",
+      "Fine not exceeding KD 75 and not less than KD 45"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 64,
+    "text": "What are the requirements for vehicles intended for towing?",
+    "answers": [
+      "Providing safety equipment for the trailer, including reflective tape, warning triangle, and rear lights",
+      "Driver must keep to the left side of the road",
+      "All of the above"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 65,
+    "text": "Conditions for towing:",
+    "answers": [
+      "Must be documented in the vehicle registration booklet allowing towing",
+      "Keep to the right side of the road",
+      "All of the above"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 66,
+    "text": "Road users must not abide by traffic rules and ethics",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 67,
+    "text": "It is not necessary to turn on the vehicle's lights at night if there are lights in the street?",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 68,
+    "text": "In which cases is wearing a seatbelt mandatory?",
+    "answers": [
+      "On highways only",
+      "In case the speed exceeds 80 km/h",
+      "In all cases, the seat belt must be fastened"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": true,
+    "tf": false
+  },
+  {
+    "id": 69,
+    "text": "What should you do in case of traffic congestion?",
+    "answers": [
+      "Overtake the vehicles and proceed to your destination",
+      "Stay calm and follow traffic rules",
+      "Use the vehicle horn repeatedly",
+      "I do not leave any space between me and the vehicle in front so that no one overtakes me"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 70,
+    "text": "Driving pickup trucks requires a special permit from the General Traffic Department, except for:",
+    "answers": [
+      "Kuwaitis only",
+      "Kuwaitis and Gulf citizens only",
+      "All nationalities",
+      "Does not require a permit at all"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 71,
+    "text": "According to traffic regulations, who has the right of way at a roundabout?",
+    "answers": [
+      "Vehicles approaching from the right side",
+      "Vehicles moving inside the roundabout, approaching from the left side",
+      "All vehicles have equal priority"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 72,
+    "text": "What is meant by the 'prohibited area' at intersections?",
+    "answers": [
+      "Vehicle parking is strictly prohibited",
+      "Driving at a low speed",
+      "Trucks are prohibited from using this route"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 73,
+    "text": "What is the proper action to take after a minor traffic accident?",
+    "answers": [
+      "Move the vehicle and shift to a safe location to avoid traffic congestion",
+      "Remain at the accident scene without moving the vehicle until the police arrive",
+      "None of the above"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 74,
+    "text": "The number of points assigned for a direct violation of driving against the direction of traffic on highways and ring roads is:",
+    "answers": [
+      "3 points",
+      "4 points",
+      "6 points",
+      "2 points"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 75,
+    "text": "What is the court penalty for reckless driving and endangering others?",
+    "answers": [
+      "Imprisonment for more than one year and not exceeding three years, and a fine not exceeding 1000 KWD and not less than 600 KWD, or either of these penalties",
+      "Imprisonment for more than one year and not exceeding three years, and a fine not exceeding 2000 KWD and not less than 1000 KWD, or either of these penalties",
+      "Imprisonment for more than one year and not exceeding three years, and a fine not exceeding 3000 KWD and not less than 2000 KWD, or either of these penalties"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 76,
+    "text": "When you see black smoke coming out of the exhaust, the cause is:",
+    "answers": [
+      "The carburetor is clean",
+      "Weak spark plugs",
+      "Engine is consuming oil",
+      "Malfunction in the injection system, requires cleaning or replacement"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 77,
+    "text": "If your car battery is weak and you want to start the car using another battery and jumper cables, you should:",
+    "answers": [
+      "Place the positive clamp (+) on the negative terminal (-), and the negative clamp (-) on the positive terminal (+)",
+      "Place the positive clamp (+) on the positive terminal (+), and the negative clamp (-) on the negative terminal (-)",
+      "Connect the negative clamp (-) to the negative terminal (-), and the positive clamp (+) to the negative terminal (-)"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 78,
+    "text": "It is permissible without obtaining a permit to use vehicles in the advertisement by putting loudspeakers, signs or hologram models",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 79,
+    "text": "When should turn signals be used for turning or lane changing?",
+    "answers": [
+      "Used only at night",
+      "Used only if the road is congested",
+      "Used in all circumstances so that other drivers can be alerted"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": true,
+    "tf": false
+  },
+  {
+    "id": 80,
+    "text": "This Sign Means:",
+    "answers": [
+      "Overtaking Prohibited",
+      "No Vehicles Allowed",
+      "Strictly No Parking",
+      "No Entry"
+    ],
+    "correctIndex": 2,
+    "imageName": "StrictlyNoParking",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 81,
+    "text": "How should you drive on a curve in the road?",
+    "answers": [
+      "Accelerate slightly",
+      "Reduce your speed gradually",
+      "Maintain the same speed"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 82,
+    "text": "This Sign Means:",
+    "answers": [
+      "Caution — School Zone",
+      "Pedestrian Crossing",
+      "Unpaved Road",
+      "Bicycles Prohibited"
+    ],
+    "correctIndex": 0,
+    "imageName": "SchoolZone",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 83,
+    "text": "When should the hazard warning (flasher) signal be used?",
+    "answers": [
+      "After sunset",
+      "In case the vehicle is fully stopped on the public road",
+      "In unstable weather conditions, the vehicle must move on the public road"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 84,
+    "text": "Children under 10 years old must sit in the:",
+    "answers": [
+      "In the front seat, with the seatbelt fastened",
+      "Child safety seat in any seat within the vehicle",
+      "In the rear seat, properly secured"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 85,
+    "text": "Allowing a child under the age of 10 to sit in the front seat is punishable by a fine not exceeding:",
+    "answers": [
+      "Imprisonment for a period not exceeding two months and a fine not less than KD 100 and not exceeding KD 200, or either of these two penalties",
+      "KD 15 Fine",
+      "KD 5 Fine",
+      "KD 20 Fine"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 86,
+    "text": "Instances that lead to the withdrawal of a driving license:",
+    "answers": [
+      "Using the vehicle to commit any violations against public morals",
+      "Running a red traffic light",
+      "All of the above"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 87,
+    "text": "Before carrying out any repair on a vehicle due to an accident, the vehicle owner must:",
+    "answers": [
+      "Obtaining written authorization from the police investigator at the station where the accident occurred",
+      "Notify the Relevant Traffic Department",
+      "Notify the Police Station where the residence is located"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 88,
+    "text": "A vehicle may be driven without its plates",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 89,
+    "text": "While driving, space must be left between one car and another.",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 90,
+    "text": "Yellow lines in the middle of the street in this form mean:",
+    "answers": [
+      "Dividing zone between two directions",
+      "No stopping",
+      "Strictly no overtaking in both directions",
+      "Overtaking allowed for one direction"
+    ],
+    "correctIndex": 2,
+    "imageName": "NoOvertaking",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 91,
+    "text": "The sign means:",
+    "answers": [
+      "Slopes",
+      "Dangerous curves",
+      "Pathways",
+      "Main road"
+    ],
+    "correctIndex": 1,
+    "imageName": "DangerousCurves",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 92,
+    "text": "Driving on the left shoulder is allowed in areas specified by the General Traffic Department but at a speed not exceeding:",
+    "answers": [
+      "120 km/h",
+      "45 km/h",
+      "80 km/h",
+      "100 km/h"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 93,
+    "text": "This Sign Means:",
+    "answers": [
+      "Strictly No Parking",
+      "No Entry",
+      "No Waiting Allowed"
+    ],
+    "correctIndex": 1,
+    "imageName": "NoEntry",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 94,
+    "text": "What is the correct action when the traffic light is green but the intersection is blocked?",
+    "answers": [
+      "Crossing the intersection at high speed",
+      "Wait and do not overtake to avoid stopping in the restricted area",
+      "Stopping in the middle of the road to allow safe crossing"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 95,
+    "text": "Settlement fine for window tinting violations contrary to regulations:",
+    "answers": [
+      "30 KWD",
+      "40 KWD",
+      "50 KWD"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 96,
+    "text": "It is not permissible to leave, throw or place anything that may obstruct the traffic",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 97,
+    "text": "The sign means:",
+    "answers": [
+      "Attention: Roadworks ahead",
+      "Road excavations ahead",
+      "Road closed",
+      "Pedestrians ahead"
+    ],
+    "correctIndex": 0,
+    "imageName": "RoadworkAhead",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 98,
+    "text": "What does the “number of passengers” mentioned on the vehicle registration refer to?",
+    "answers": [
+      "All passengers including the driver",
+      "All passengers except the driver",
+      "Rear seat passengers"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 99,
+    "text": "For each direct traffic violation committed, a number of points are calculated. If the total points reach 14 for the first time, the penalty is:",
+    "answers": [
+      "Suspension of the driving license for a period of 3 months",
+      "Suspension of the driving license for one month",
+      "Suspension of the driving license for two months regardless of the number of points accumulated"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 100,
+    "text": "If a police officer detects faulty brakes and the technical expert confirms the defect, the driver shall be punished by:",
+    "answers": [
+      "Imprisonment for one month and a fine not exceeding KD 50, or either of these two penalties",
+      "Imprisonment for a period not exceeding one month and a fine not exceeding KD 75, or either of these two penalties",
+      "Imprisonment for a period not exceeding two months and a fine not exceeding KD 50, or either of these two penalties",
+      "Imprisonment for a period not exceeding two months and a fine not exceeding KD 200 and not less than KD 100, or either of these two penalties"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 101,
+    "text": "Priority of passage in the turns must be given to the vehicle on the left",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 102,
+    "text": "Under which of the following conditions is parking in spaces designated for the disabled allowed?",
+    "answers": [
+      "If no parking is available and you are in a hurry and will not stay for long",
+      "Only for disabled persons holding an official state-approved certificate",
+      "If you are in the car and have not left it, it is allowed to wait in disabled parking spaces"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": true,
+    "tf": false
+  },
+  {
+    "id": 103,
+    "text": "This Sign Means:",
+    "answers": [
+      "Priority to Stop",
+      "Priority for Your Lane",
+      "Priority to Oncoming Traffic"
+    ],
+    "correctIndex": 2,
+    "imageName": "OncomingPriority",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 104,
+    "text": "A curb painted black and white means:",
+    "answers": [
+      "Median sidewalk",
+      "Curbside no stopping",
+      "Parking allowed on the curb"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 105,
+    "text": "What is the intended use of the cargo area in transport vehicles?",
+    "answers": [
+      "Designed for passengers only",
+      "Designed for passengers and carrying items",
+      "It is not allowed to place anything",
+      "Intended for placing items only"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 106,
+    "text": "Cases where a license may be withdrawn according to Article 42 of the Traffic Law:",
+    "answers": [
+      "Running a red traffic light",
+      "Deliberately obstructing traffic flow",
+      "All of the above"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 107,
+    "text": "The penalty for anyone who publishes a video recording while committing any offense under the Traffic Law, as per Article 36 bis:",
+    "answers": [
+      "Fine ranging from 500 to 1,000 KWD",
+      "Fine ranging from 1,000 to 2,000 KWD",
+      "Fine ranging from 2,000 to 3,000 KWD"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 108,
+    "text": "If a medical test proves the driver was under the influence of alcohol, the penalty is:",
+    "answers": [
+      "Imprisonment for a period not exceeding one month and a fine not exceeding KD 75, or either of these two penalties",
+      "Imprisonment for a period not exceeding one year and a fine not exceeding KD 500, or either of these two penalties",
+      "Imprisonment for a period not exceeding six months and a fine not exceeding KD 1000, or either of these two penalties",
+      "Imprisonment for a period not exceeding two years and not less than one year, and a fine not exceeding KD 3000 and not less than KD 1000, or either of these two penalties"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 109,
+    "text": "What is the maximum allowable window tint percentage, and which type of glass is prohibited from being tinted?",
+    "answers": [
+      "Window tinting up to 70% is allowed for side and rear windows; front windshield tinting is prohibited",
+      "Window tinting up to 30% is allowed for side and rear windows; front windshield tinting is prohibited",
+      "Window tinting up to 40% is allowed for side and rear windows; front windshield tinting is prohibited"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 110,
+    "text": "The right shoulder of the road is designated for:",
+    "answers": [
+      "Emergency stop",
+      "Waiting",
+      "For overtaking"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 111,
+    "text": "A curb painted yellow and black means:",
+    "answers": [
+      "No stopping",
+      "Bus stop",
+      "Ambulance parking"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 112,
+    "text": "The penalty for driving a motor vehicle recklessly or negligently is:",
+    "answers": [
+      "Imprisonment for a period not exceeding one month and a fine not exceeding KD 50, or either of these two penalties",
+      "Imprisonment for a period not exceeding two months and a fine not exceeding KD 150, or either of these two penalties",
+      "Imprisonment for a period not exceeding three months and a fine not exceeding KD 100, or either of these two penalties",
+      "Imprisonment for a period exceeding one year and not exceeding three years and a fine not less than KD 600 and not exceeding KD 1,000, or either of these two penalties"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 113,
+    "text": "The seatbelt must be fastened in the following cases:",
+    "answers": [
+      "When driving at 80 km/h",
+      "When driving at 100 km/h",
+      "When driving at 120 km/h",
+      "In all cases"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 114,
+    "text": "The vehicle load may exceed the permissible weight",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 115,
+    "text": "When witnessing an accident on a public road, what is the correct and safe action?",
+    "answers": [
+      "Stopping and watching the accident",
+      "Pass the accident scene and continue driving to give way for police and ambulance vehicles",
+      "Getting out of the vehicle and observing the accident"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": true,
+    "tf": false
+  },
+  {
+    "id": 116,
+    "text": "This Sign Means :",
+    "answers": [
+      "Overtaking Allowed",
+      "Overtaking Strictly Prohibited",
+      "Road Center Line",
+      "Overtaking Permitted (One Direction Only)"
+    ],
+    "correctIndex": 3,
+    "imageName": "1dOvertaking",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 117,
+    "text": "When is it permissible to drive a truck on public roads?",
+    "answers": [
+      "At all times",
+      "After sunset and at night",
+      "During the designated times permitted by the General Traffic Department"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 118,
+    "text": "What is the legal status of driving “buggies” on public roads?",
+    "answers": [
+      "Not considered a violation",
+      "Considered a violation; the vehicle will be impounded in the vehicle impound yard",
+      "Considered a violation; a warning will be issued upon repetition"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 119,
+    "text": "Vehicles drivers must stop immediately whenever traffic and police officers ask them",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 120,
+    "text": "What should you do when you see pedestrians crossing at a pedestrian crossing?",
+    "answers": [
+      "Do not allow them to cross because you have the right of way",
+      "Alert them using the vehicle’s horn",
+      "Allow them to pass, as they have the right of way",
+      "I don`t care and proceed on my way"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 121,
+    "text": "The driving license issued for the first time may be withdrawn, and no new license shall be granted until a period of no less than four months has passed from the date of withdrawal if:",
+    "answers": [
+      "The vehicle owner committed a number of non-serious violations during the first year",
+      "The vehicle owner committed two serious violations during the first year (Article 33 + 33 Bis + 38)",
+      "The vehicle owner committed one serious violation during the first year, which endangered people`s lives and property"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 122,
+    "text": "Direct violation — failing to stop and notify the police after a traffic accident eligible for settlement will result in a fine of:",
+    "answers": [
+      "KD 10",
+      "KD 15",
+      "KD 20",
+      "KD 30"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 123,
+    "text": "The vehicle may be driven on tiled sidewalks",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 124,
+    "text": "Driving “buggies” is permitted in the following locations:",
+    "answers": [
+      "In internal roads",
+      "On beaches",
+      "In remote desert areas away from residential zones"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": true,
+    "tf": false
+  },
+  {
+    "id": 125,
+    "text": "Driving a motor vehicle without fastening the seat belt is punishable by:",
+    "answers": [
+      "Fine not exceeding KD 10",
+      "Imprisonment for a period not exceeding one week and a fine not exceeding KD 25, or either of these two penalties",
+      "Fine not exceeding KD 15",
+      "Imprisonment for a period not exceeding one month and a fine not exceeding KD 100 and not less than KD 50, or either of these two penalties"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 126,
+    "text": "Penalty for handing over a vehicle to a person without a driving license, if referred to court, in accordance with Article 34 of the Traffic Law:",
+    "answers": [
+      "Imprisonment for a period not exceeding one month, and a fine between 50 – 100 KWD, or either of these penalties",
+      "Imprisonment for a period not exceeding two months, and a fine between 100 – 200 KWD, or either of these penalties",
+      "Imprisonment for a period not exceeding 3 months, and a fine between 200 – 300 KWD, or either of these penalties"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 127,
+    "text": "When a police officer asks you for your driving license or ID, what should you do?",
+    "answers": [
+      "Do not hand over anything if you are not convinced",
+      "Refuse to stop and continue to my destination",
+      "Respond to him immediately",
+      "Only if he is an officer, I respond to him"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 128,
+    "text": "The seatbelt helps to:",
+    "answers": [
+      "Quick vehicle launch",
+      "Reduces rollover rate",
+      "Reduces the rate of vehicle damage",
+      "Reduces the risk of injuries"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 129,
+    "text": "Causing traffic obstruction by driving below the minimum speed limit is punishable by:",
+    "answers": [
+      "Imprisonment for a period not exceeding one week and a fine not exceeding KD 25, or either of these two penalties",
+      "Fine not exceeding KD 30",
+      "Imprisonment for a period not exceeding one week and a fine not exceeding KD 50, or either of these two penalties",
+      "Imprisonment for a period not exceeding one month and a fine not exceeding KD 100 and not less than KD 50, or either of these two penalties"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 130,
+    "text": "Traffic priority at the crossroads is for the one coming from the right when there is no traffic signal",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 131,
+    "text": "Broken white lines in the middle of the street mean:",
+    "answers": [
+      "Overtaking prohibited in one direction",
+      "Warning lines",
+      "Overtaking prohibited",
+      "Lane marking lines, overtaking allowed"
+    ],
+    "correctIndex": 3,
+    "imageName": "OvertakingAllowed",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 132,
+    "text": "The penalty for violating the speed limit by driving at 140 km/h on King Fahad Expressway is:",
+    "answers": [
+      "Imprisonment for a period not exceeding two months and a fine not exceeding KD 100, or either of these two penalties",
+      "Imprisonment for a period not exceeding three months and a fine not exceeding KD 100, or either of these two penalties",
+      "Imprisonment for a period not exceeding one month and a fine not exceeding KD 100, or either of these two penalties",
+      "Imprisonment for a period exceeding one year and not exceeding three years and a fine not less than KD 600 and not exceeding KD 1,000, or either of these two penalties"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 133,
+    "text": "The number of points assigned for a direct violation in the case of running a red traffic light is:",
+    "answers": [
+      "6 points",
+      "4 points",
+      "3 points",
+      "12 points"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 134,
+    "text": "You are allowed to pass a red traffic light in the following cases:",
+    "answers": [
+      "If the intersection is clear of vehicles, with caution",
+      "If you are in a hurry or have an urgent personal matter",
+      "You cannot cross the red light at all unless instructed to do so by interior officers"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": true,
+    "tf": false
+  },
+  {
+    "id": 135,
+    "text": "Causing damage to public or private property as a result of violating traffic regulations is punishable by:",
+    "answers": [
+      "Imprisonment for a period not exceeding 25 days and a fine not exceeding KD 40, or either of these two penalties",
+      "Imprisonment for a period not exceeding one month and a fine not exceeding KD 50, or either of these two penalties",
+      "Imprisonment for a period not exceeding one month and a fine not exceeding KD 75, or either of these two penalties",
+      "Imprisonment for a period not exceeding two months and a fine not exceeding KD 200 and not less than KD 100, or either of these two penalties"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 136,
+    "text": "Allowing passengers to sit on any external part of the vehicle is punishable by:",
+    "answers": [
+      "Fine not exceeding KD 15",
+      "Fine not exceeding KD 10",
+      "Imprisonment for a period not exceeding one week and a fine not exceeding KD 25, or either of these two penalties",
+      "Fine not exceeding KD 75 and not less than KD 45"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 137,
+    "text": "It is permissible to drive a vehicle missing any of the safety and durability conditions",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 138,
+    "text": "This Sign Means:",
+    "answers": [
+      "Reduce Speed",
+      "Pedestrian Crossing",
+      "End of Narrow Road"
+    ],
+    "correctIndex": 2,
+    "imageName": "EndNarrowRd",
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 139,
+    "text": "Without an acceptable excuse, Motor vehicles may not be driven at night without lighting the necessary lights.",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 140,
+    "text": "The minimum speed limit on the Sixth Ring Road for small cars is:",
+    "answers": [
+      "40 km/h",
+      "80 km/h",
+      "100 km/h"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 141,
+    "text": "The fine for unauthorized parking in designated disabled parking spaces through settlement order is:",
+    "answers": [
+      "50 KWD",
+      "100 KWD",
+      "150 KWD"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 142,
+    "text": "What is the penalty for gathering with the intention of recklessness or negligence?",
+    "answers": [
+      "A fine ranging from 150 to 300 KWD",
+      "Imprisonment for more than one year and not exceeding three years, and a fine not exceeding 1000 KWD and not less than 600 KWD",
+      "A fine not exceeding 75 KWD and not less than 45 KWD"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 143,
+    "text": "The fine for driving below the minimum speed limit on ring roads does not exceed:",
+    "answers": [
+      "A fine not exceeding KD 100 and not less than KD 50",
+      "KD 30 fine",
+      "KD 15 fine",
+      "KD 20 fine"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 144,
+    "text": "The penalty for conducting a motor vehicle race on public roads without authorization or in violation of the permit conditions is:",
+    "answers": [
+      "Imprisonment for a period not exceeding one month and a fine not exceeding KD 100, or either of these two penalties",
+      "Imprisonment for a period not exceeding two months and a fine not exceeding KD 150, or either of these two penalties",
+      "Imprisonment for a period not exceeding three months and a fine not exceeding KD 100, or either of these two penalties",
+      "Imprisonment for a period exceeding one year and not exceeding three years and a fine not less than KD 600 and not exceeding KD 1,000, or either of these two penalties"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 145,
+    "text": "The minimum speed limit for small cars on the Sixth Ring Road is:",
+    "answers": [
+      "40 km/h",
+      "80 km/h",
+      "100 km/h"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 146,
+    "text": "If a driver is caught using a mobile phone or distracted multiple times within the first year of obtaining a driving license, what penalty may be imposed?",
+    "answers": [
+      "Financial penalty only",
+      "The driver`s license issued for the first time may be withdrawn, and a new license may not be obtained until 4 months have passed from the withdrawal date",
+      "The driving license will be permanently revoked"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": true,
+    "tf": false
+  },
+  {
+    "id": 147,
+    "text": "A driver who tints the vehicle windows contrary to official instructions and regulations is punishable by:",
+    "answers": [
+      "Imprisonment for a period not exceeding one week and a fine not exceeding KD 45, or either of these two penalties",
+      "Imprisonment for a period not exceeding one week and a fine not exceeding KD 25, or either of these two penalties",
+      "Fine not exceeding KD 50",
+      "Imprisonment for a period not exceeding two months and a fine not exceeding KD 200 and not less than KD 100, or either of these two penalties"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 148,
+    "text": "Settlement order for a violation of exceeding the speed limit by more than 30 km/h and up to 40 km/h is:",
+    "answers": [
+      "KD 90",
+      "KD 50",
+      "KD 60",
+      "KD 70"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 149,
+    "text": "Leaving a child under 10 years old unattended in a vehicle is prohibited under the following circumstances:",
+    "answers": [
+      "Without adult supervision while the vehicle is moving",
+      "Leaving a child alone in the vehicle without adult supervision",
+      "It is allowed to leave him/her"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": true,
+    "tf": false
+  },
+  {
+    "id": 150,
+    "text": "Driving a motor vehicle with a suspended license — settlement is allowed upon payment of:",
+    "answers": [
+      "KD 40",
+      "KD 30 Fine",
+      "KD 15 Fine",
+      "KD 10 Fine"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 151,
+    "text": "Pedestrians and cyclists violating traffic regulations shall be punished by:",
+    "answers": [
+      "Imprisonment for a period not exceeding one week and a fine not exceeding KD 50, or either of these two penalties",
+      "Fine not exceeding KD 20",
+      "Imprisonment for a period not exceeding one week and a fine not exceeding KD 25, or either of these two penalties",
+      "Fine not exceeding KD 75 and not less than KD 45"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 152,
+    "text": "The vehicle may be left on the highway and obstruct the traffic",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 153,
+    "text": "Drivers must slow down the vehicles in residential areas",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 154,
+    "text": "Do not use the warning sign (flasher) unless the vehicle has stopped completely on the highway?",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": true
+  },
+  {
+    "id": 155,
+    "text": "Settlement fine amount for failure to comply with road surface markings:",
+    "answers": [
+      "50 KWD",
+      "100 KWD",
+      "150 KWD"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 156,
+    "text": "It is prohibited for a child under the age of ___ to sit in the front seat:",
+    "answers": [
+      "8 years",
+      "9 years",
+      "10 years"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": true,
+    "tf": false
+  },
+  {
+    "id": 157,
+    "text": "According to Article 37 bis of the Traffic Law, a legal entity may be held criminally liable for traffic violations and the applicable penalty is:",
+    "answers": [
+      "1,000 – 2,000 KWD",
+      "1,000 – 5,000 KWD",
+      "1,000 – 10,000 KWD"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 158,
+    "text": "Installing disturbing sounds in a vehicle subjects it to impoundment for a period of:",
+    "answers": [
+      "2 months",
+      "3 months",
+      "4 months"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 159,
+    "text": "A driving license granted for the first time may be withdrawn if the holder commits two offenses, as stated in Articles 33 (excluding 33/3), 33 bis, or 38, during the first year, and a new license will not be issued before:",
+    "answers": [
+      "A period not less than two months",
+      "A period not less than three months",
+      "A period not less than 4 months"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 160,
+    "text": "The fine for failing to use turn signals when changing direction does not exceed:",
+    "answers": [
+      "A fine not exceeding KD 50 and not less than KD 30",
+      "KD 10",
+      "KD 15",
+      "KD 20"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 161,
+    "text": "Parking a motor vehicle in spaces designated for the disabled is punishable by:",
+    "answers": [
+      "Imprisonment for a period not exceeding one week and a fine not exceeding KD 25, or either of these two penalties",
+      "Fine not exceeding KD 15",
+      "Fine not exceeding KD 10",
+      "Imprisonment for a period exceeding one year and not exceeding three years, and a fine not exceeding KD 1,000 and not less than KD 600, or either of these two penalties"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 162,
+    "text": "Before making any changes to the vehicle’s registration purpose, color, or replacing any essential part, the owner must:",
+    "answers": [
+      "Report the accident to the police station in the area where it occurred",
+      "Obtain Written Approval from the Relevant Department at the General Traffic Administration",
+      "Obtain Verbal Approval from the Traffic Department"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 163,
+    "text": "Leaving animals on public roads unattended or violating animal-keeping traffic rules is punishable by:",
+    "answers": [
+      "Fine not exceeding KD 15",
+      "Imprisonment for a period not exceeding one week and a fine not exceeding KD 50, or either of these two penalties",
+      "Imprisonment for a period not exceeding two months and a fine not exceeding KD 25, or either of these two penalties",
+      "Fine not exceeding KD 75 and not less than KD 45"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 164,
+    "text": "The minimum speed limit in the sixth ring road for small cars is:",
+    "answers": [
+      "40 km/h",
+      "80 km/h",
+      "100 km/h"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 165,
+    "text": "The fine for failing to give way to official convoys does not exceed:",
+    "answers": [
+      "Imprisonment for a period not exceeding three months and a fine not exceeding KD 300 and not less than KD 150, or either of these two penalties",
+      "KD 75",
+      "KD 15",
+      "KD 20"
+    ],
+    "correctIndex": 0,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 166,
+    "text": "In which cases may the General Department of Traffic reject a settlement agreement?",
+    "answers": [
+      "If the offender commits more than one serious violation",
+      "If the offender commits multiple violations",
+      "All of the above"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": true,
+    "tf": false
+  },
+  {
+    "id": 167,
+    "text": "A driver violating traffic signals, instructions, or guidance regulating road traffic is punishable by:",
+    "answers": [
+      "Imprisonment for a period not exceeding one week and a fine not exceeding KD 25, or either of these two penalties",
+      "Fine not exceeding KD 30",
+      "Imprisonment for a period not exceeding one week and a fine not exceeding KD 45, or either of these two penalties",
+      "Imprisonment for a period not exceeding one month and a fine not exceeding KD 100 and not less than KD 50, or either of these two penalties"
+    ],
+    "correctIndex": 3,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 168,
+    "text": "If the driver`s total traffic points reach 14 for the first time, the driving license shall be suspended for:",
+    "answers": [
+      "One Month",
+      "Two Months",
+      "Three Months"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 169,
+    "text": "Driving a vehicle that fails to meet safety and roadworthiness standards is punishable by a fine not exceeding:",
+    "answers": [
+      "KD 5",
+      "KD 10",
+      "KD 15",
+      "KD 20"
+    ],
+    "correctIndex": 2,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  },
+  {
+    "id": 170,
+    "text": "It is preferable to check and replace the brake system, if necessary, every:",
+    "answers": [
+      "3 months",
+      "6 months",
+      "9 months",
+      "12 months"
+    ],
+    "correctIndex": 1,
+    "imageName": null,
+    "isCritical": false,
+    "tf": false
+  }
+]

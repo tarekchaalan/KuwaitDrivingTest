@@ -9,9 +9,10 @@ import Testing
 @testable import Kuwait_Driving_Test
 
 struct Kuwait_Driving_TestTests {
-
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    @Test func testQuestionsLoad() async throws {
+        let qs = QuestionLoader.load()
+        #expect(qs.count == 170)
+        #expect(qs.contains { $0.isCritical })
+        #expect(qs.contains { $0.imageName == "Ambulance" })
     }
-
 }
