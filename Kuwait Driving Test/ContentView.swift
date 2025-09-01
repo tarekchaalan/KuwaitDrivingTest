@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var vm = QuizViewModel()
     @Environment(\.colorScheme) private var colorScheme
+//    @State private var confettiTick = 0 // CONFETTI TEST
 
     var body: some View {
         ZStack {
@@ -68,6 +69,8 @@ struct ContentView: View {
             }
             .appCard()
             .padding(.horizontal)
+
+//            Button("Test Confetti") { confettiTick += 1 } // CONFETTI TEST
 
             // Specialized Quiz Modes
             VStack(spacing: 12) {
@@ -183,6 +186,12 @@ struct ContentView: View {
             Spacer(minLength: 20)
         }
         .padding(.top, 40)
+//        .overlay(alignment: .top) { // CONFETTI TEST
+//            if confettiTick > 0 { // CONFETTI TEST
+//                ConfettiView(isPerfect: false) // CONFETTI TEST
+//                    .id(confettiTick)
+//            } // CONFETTI TEST
+//        } // CONFETTI TEST
     }
 }
 
