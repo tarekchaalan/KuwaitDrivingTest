@@ -3,7 +3,7 @@
 <!-- HEADER STYLE: MODERN -->
 <div align="center" style="width: 100%;">
 
-<img src="./Kuwait Driving Test/Assets.xcassets/Logo.png" width="35%" style="display: block; margin: 0 auto; border-radius: 15px" alt="Project Logo"/>
+<img src="./Kuwait Driving Test/Assets.xcassets/Logo.png" width="35%" style="display: block; margin: 0 auto; border-radius: 30px" alt="Project Logo"/>
 
 <!-- HEADER STYLE: MODERN -->
 
