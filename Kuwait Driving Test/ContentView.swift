@@ -12,6 +12,7 @@ struct ContentView: View {
     @Environment(\.colorScheme) private var colorScheme
 //    @State private var confettiTick = 0 // CONFETTI TEST
     @State private var sliderValue: Double = 20
+    @State private var showHistory: Bool = false
 
     var body: some View {
         ZStack {
@@ -34,14 +35,24 @@ struct ContentView: View {
 
     private var startScreen: some View {
         VStack(spacing: 24) {
+            // Top bar with history
+            HStack {
+                Spacer()
+                Button {
+                    showHistory = true
+                } label: {
+                    Image(systemName: "chart.bar.xaxis")
+                        .font(.title3)
+                }
+                .buttonStyle(.plain)
+            }
+            .padding(.horizontal)
+            .padding(.top, 8)
             VStack(spacing: 8) {
-                Image(systemName: "car.fill")
-                    .font(.system(size: 44, weight: .bold))
-                    .accessibilityHidden(true)
                 Text("Kuwait Driving Test")
                     .font(.largeTitle.bold())
                     .multilineTextAlignment(.center)
-                Text("Practice with real-style questions.\nCritical questions cause instant fail.")
+                Text("Practice with real MOI questions.\nCritical questions cause instant fail.")
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.secondary)
             }
@@ -175,33 +186,58 @@ struct ContentView: View {
                     .buttonStyle(.plain)
                 }
 
-                // Study Mode as wider button below
-                Button {
-                    vm.setQuestionCount(Int(sliderValue))
-                    vm.setQuizMode(.study)
-                    vm.startQuiz()
-                } label: {
-                    VStack(spacing: 8) {
-                        Image(systemName: "book.fill")
-                            .font(.title2)
-                            .foregroundStyle(.purple)
-                        Text("Study Mode")
-                            .font(.subheadline.weight(.semibold))
-                            .multilineTextAlignment(.center)
+                // Study and Saved buttons side-by-side
+                HStack(spacing: 12) {
+                    Button {
+                        vm.setQuestionCount(Int(sliderValue))
+                        vm.setQuizMode(.study)
+                        vm.startQuiz()
+                    } label: {
+                        VStack(spacing: 8) {
+                            Image(systemName: "book.fill")
+                                .font(.title2)
+                                .foregroundStyle(.purple)
+                            Text("Study")
+                                .font(.subheadline.weight(.semibold))
+                                .multilineTextAlignment(.center)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(AppTheme.cardBackground)
+                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(AppTheme.cardBackground)
-                    .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    .buttonStyle(.plain)
+
+                    Button {
+                        vm.setQuestionCount(Int(sliderValue))
+                        vm.setQuizMode(.savedOnly)
+                        vm.startQuiz()
+                    } label: {
+                        VStack(spacing: 8) {
+                            Image(systemName: "pin.fill")
+                                .font(.title2)
+                                .foregroundStyle(.orange)
+                            Text("Saved")
+                                .font(.subheadline.weight(.semibold))
+                                .multilineTextAlignment(.center)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(AppTheme.cardBackground)
+                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
             }
             .appCard()
             .padding(.horizontal)
 
             Spacer(minLength: 20)
         }
-        .padding(.top, 40)
+        .padding(.top, 20)
+        .sheet(isPresented: $showHistory) {
+            HistoryView(vm: vm, onClose: { showHistory = false })
+        }
 //        .overlay(alignment: .top) { // CONFETTI TEST
 //            if confettiTick > 0 { // CONFETTI TEST
 //                ConfettiView(isPerfect: false) // CONFETTI TEST

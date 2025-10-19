@@ -10,18 +10,54 @@ import SwiftUI
 struct QuizView: View {
     @ObservedObject var vm: QuizViewModel
     @State private var showExitAlert = false
+    @State private var showHistory = false
 
     var body: some View {
         if vm.quizMode == .study {
-            StudyView(questions: vm.questions, onExit: { vm.exitStudyMode() })
+            StudyView(questions: vm.questions, onExit: { vm.exitStudyMode() }, vm: vm)
                 .transition(.opacity.combined(with: .scale))
         } else {
             VStack(spacing: 16) {
-                header
-                if let q = vm.currentQuestion {
-                    QuestionCard(question: q,
-                                 selectedIndex: vm.selectedAnswerIndex,
-                                 onSelect: vm.selectAnswer(_:))
+                // Back button only for Saved mode when empty
+                if vm.quizMode == .savedOnly && vm.questions.isEmpty {
+                    HStack {
+                        Button {
+                            // Use same confirmation flow as Exit
+                            let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
+                            impactFeedback.impactOccurred()
+                            showExitAlert = true
+                        } label: {
+                            Label("Back", systemImage: "chevron.left")
+                                .font(.headline)
+                        }
+                        .buttonStyle(.plain)
+                        Spacer()
+                    }
+                }
+
+                // Hide header when Saved has no questions
+                if !(vm.quizMode == .savedOnly && vm.questions.isEmpty) {
+                    header
+                }
+
+                if vm.quizMode == .savedOnly && vm.questions.isEmpty {
+                    VStack(spacing: 12) {
+                        Image(systemName: "pin.slash")
+                            .font(.system(size: 40))
+                            .foregroundStyle(.secondary)
+                        Text("No saved questions yet")
+                            .font(.headline)
+                            .foregroundStyle(.secondary)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else if let q = vm.currentQuestion {
+                    QuestionCard(
+                        question: q,
+                        selectedIndex: vm.selectedAnswerIndex,
+                        onSelect: vm.selectAnswer(_:),
+                        isPinned: vm.isPinned(q),
+                        onTogglePin: { vm.togglePin($0) }
+                    )
                     Spacer(minLength: 8)
                     submitBar
                 } else {

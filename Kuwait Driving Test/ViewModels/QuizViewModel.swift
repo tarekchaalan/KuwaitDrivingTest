@@ -8,12 +8,13 @@
 import Foundation
 import SwiftUI
 
-enum QuizMode: String, CaseIterable {
+enum QuizMode: String, CaseIterable, Codable {
     case standard = "Standard Test"
     case regularOnly = "Regular Questions Only"
     case criticalOnly = "Critical Questions Only"
     case trueFalseOnly = "True/False Questions Only"
     case imageOnly = "Questions with Images Only"
+    case savedOnly = "Saved Questions Only"
     case study = "Study Mode"
 }
 
@@ -39,12 +40,20 @@ final class QuizViewModel: ObservableObject {
     @Published private(set) var correctCount: Int = 0
     @Published private(set) var answeredCriticalWrong: Bool = false
 
+    // Pinned questions
+    @Published private(set) var pinnedQuestionIds: Set<Int> = []
+
     // For accessibility/haptics
     let feedback = UINotificationFeedbackGenerator()
+
+    // History
+    @Published private(set) var history: [QuizAttempt] = []
 
     init() {
         self.allQuestions = QuestionLoader.load()
         // Keep deterministic order
+        loadPinned()
+        loadHistory()
     }
 
     func setQuestionCount(_ count: Int) {
@@ -69,6 +78,8 @@ final class QuizViewModel: ObservableObject {
             startTrueFalseOnlyQuiz()
         case .imageOnly:
             startImageOnlyQuiz()
+        case .savedOnly:
+            startSavedOnlyQuiz()
         case .study:
             startStudyMode()
         }
@@ -134,6 +145,15 @@ final class QuizViewModel: ObservableObject {
         self.questions = imageQuestions.shuffled()
     }
 
+    private func startSavedOnlyQuiz() {
+        guard !pinnedQuestionIds.isEmpty else {
+            self.questions = []
+            return
+        }
+        let saved = allQuestions.filter { pinnedQuestionIds.contains($0.id) }
+        self.questions = saved.shuffled()
+    }
+
     private func startStudyMode() {
         // For study mode, we'll use all questions but this will be handled differently in the UI
         self.questions = allQuestions.shuffled()
@@ -185,13 +205,15 @@ final class QuizViewModel: ObservableObject {
         let total = questions.count
         let passingScore = Int(ceil(passThreshold * Double(total)))
         let passed = !answeredCriticalWrong && (correctCount >= passingScore)
-        state = .finished(QuizResult(
+        let result = QuizResult(
             total: total,
             correct: correctCount,
             passed: passed,
             failedCritical: answeredCriticalWrong,
             passingScore: passingScore
-        ))
+        )
+        state = .finished(result)
+        appendHistory(from: result)
     }
 
     func restart() {
@@ -201,5 +223,71 @@ final class QuizViewModel: ObservableObject {
     func exitStudyMode() {
         state = .idle
         quizMode = .standard
+    }
+
+    // MARK: - History Persistence
+
+    private let historyStoreKey = "QuizAttemptHistory"
+
+    private func loadHistory() {
+        guard let data = UserDefaults.standard.data(forKey: historyStoreKey) else { return }
+        do {
+            let decoded = try JSONDecoder().decode([QuizAttempt].self, from: data)
+            history = decoded.sorted { $0.date > $1.date }
+        } catch {
+            // ignore decode errors
+        }
+    }
+
+    private func saveHistory() {
+        do {
+            let data = try JSONEncoder().encode(history)
+            UserDefaults.standard.set(data, forKey: historyStoreKey)
+        } catch {
+            // ignore encode errors
+        }
+    }
+
+    private func appendHistory(from result: QuizResult) {
+        let attempt = QuizAttempt(
+            id: UUID(),
+            date: Date(),
+            mode: quizMode,
+            total: result.total,
+            correct: result.correct,
+            passed: result.passed,
+            failedCritical: result.failedCritical,
+            passingScore: result.passingScore
+        )
+        history.insert(attempt, at: 0)
+        if history.count > 200 { history.removeLast(history.count - 200) }
+        saveHistory()
+    }
+
+    // MARK: - Pinning
+
+    private let pinnedStoreKey = "PinnedQuestionIds"
+
+    private func loadPinned() {
+        if let stored = UserDefaults.standard.array(forKey: pinnedStoreKey) as? [Int] {
+            pinnedQuestionIds = Set(stored)
+        }
+    }
+
+    private func savePinned() {
+        UserDefaults.standard.set(Array(pinnedQuestionIds), forKey: pinnedStoreKey)
+    }
+
+    func isPinned(_ question: QuizQuestion) -> Bool {
+        pinnedQuestionIds.contains(question.id)
+    }
+
+    func togglePin(_ question: QuizQuestion) {
+        if pinnedQuestionIds.contains(question.id) {
+            pinnedQuestionIds.remove(question.id)
+        } else {
+            pinnedQuestionIds.insert(question.id)
+        }
+        savePinned()
     }
 }

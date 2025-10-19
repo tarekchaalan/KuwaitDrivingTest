@@ -10,6 +10,7 @@ import SwiftUI
 struct StudyView: View {
     let questions: [QuizQuestion]
     let onExit: () -> Void
+    @ObservedObject var vm: QuizViewModel
     @State private var selectedTab = 0
     @State private var currentIndex = 0
     @State private var showAnswer = false
@@ -80,14 +81,25 @@ struct StudyView: View {
 
                 // Flashcard
                 VStack(spacing: 20) {
-                    // Question text
-                    Text(filteredQuestions[safeCurrentIndex].text)
-                        .font(.title3.weight(.semibold))
-                        .multilineTextAlignment(.center)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(AppTheme.cardBackground)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                    // Question text and pin
+                    HStack(alignment: .top, spacing: 8) {
+                        Text(filteredQuestions[safeCurrentIndex].text)
+                            .font(.title3.weight(.semibold))
+                            .multilineTextAlignment(.leading)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Button {
+                            vm.togglePin(filteredQuestions[safeCurrentIndex])
+                        } label: {
+                            let pinned = vm.isPinned(filteredQuestions[safeCurrentIndex])
+                            Image(systemName: pinned ? "pin.fill" : "pin")
+                                .foregroundStyle(pinned ? .orange : .secondary)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(AppTheme.cardBackground)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
 
                     // Image if available
                     if let imageName = filteredQuestions[safeCurrentIndex].imageName,

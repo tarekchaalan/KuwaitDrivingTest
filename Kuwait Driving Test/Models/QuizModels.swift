@@ -16,7 +16,7 @@ struct QuizQuestion: Identifiable, Decodable, Hashable {
     let isCritical: Bool
             let tf: Bool // True/False question flag
 
-    enum CodingKeys: String, CodingKey { 
+    enum CodingKeys: String, CodingKey {
         case id, text, answers, correctIndex, imageName, isCritical
         case tf = "T/F"
     }
@@ -58,4 +58,17 @@ enum QuizState: Equatable {
     case idle
     case inProgress
     case finished(QuizResult)
+}
+
+// MARK: - Attempt History
+
+struct QuizAttempt: Identifiable, Codable, Equatable {
+    let id: UUID
+    let date: Date
+    let mode: QuizMode
+    let total: Int
+    let correct: Int
+    let passed: Bool
+    let failedCritical: Bool
+    let passingScore: Int
 }

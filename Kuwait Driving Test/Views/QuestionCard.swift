@@ -11,6 +11,8 @@ struct QuestionCard: View {
     let question: QuizQuestion
     let selectedIndex: Int?
     let onSelect: (Int) -> Void
+    var isPinned: Bool = false
+    var onTogglePin: ((QuizQuestion) -> Void)? = nil
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -27,13 +29,26 @@ struct QuestionCard: View {
                 Spacer()
             }
 
-            Text(question.text)
-                .font(.title3.weight(.semibold))
-                .accessibilityAddTraits(.isHeader)
-                .fixedSize(horizontal: false, vertical: true)
-                .minimumScaleFactor(0.6) // Allow font to shrink to 70% of original size
-                .lineLimit(.max) // unlimited lines
-                .multilineTextAlignment(.leading)
+            HStack(alignment: .top, spacing: 8) {
+                Text(question.text)
+                    .font(.title3.weight(.semibold))
+                    .accessibilityAddTraits(.isHeader)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .minimumScaleFactor(0.6) // Allow font to shrink to 60% of original size
+                    .lineLimit(.max) // unlimited lines
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                if let onTogglePin {
+                    Button {
+                        onTogglePin(question)
+                    } label: {
+                        Image(systemName: isPinned ? "pin.fill" : "pin")
+                            .foregroundStyle(isPinned ? .orange : .secondary)
+                            .accessibilityLabel(isPinned ? "Unsave" : "Save")
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
 
             if let img = question.imageName, UIImage(named: img) != nil {
                 Image(img)
