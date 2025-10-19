@@ -16,7 +16,7 @@ struct QuizQuestion: Identifiable, Decodable, Hashable {
     let isCritical: Bool
             let tf: Bool // True/False question flag
 
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey { 
         case id, text, answers, correctIndex, imageName, isCritical
         case tf = "T/F"
     }

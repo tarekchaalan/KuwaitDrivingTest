@@ -11,6 +11,7 @@ struct ContentView: View {
     @StateObject private var vm = QuizViewModel()
     @Environment(\.colorScheme) private var colorScheme
 //    @State private var confettiTick = 0 // CONFETTI TEST
+    @State private var sliderValue: Double = 20
 
     var body: some View {
         ZStack {
@@ -26,6 +27,9 @@ struct ContentView: View {
             }
         }
         .preferredColorScheme(.dark) // force dark theme
+        .onAppear {
+            sliderValue = Double(vm.selectedCount)
+        }
     }
 
     private var startScreen: some View {
@@ -44,16 +48,23 @@ struct ContentView: View {
             .padding(.horizontal)
 
             VStack(spacing: 16) {
-                Text("Number of Questions: \(vm.selectedCount)")
+                Text("Number of Questions: \(Int(sliderValue))")
                     .font(.headline)
-                Slider(value: Binding(
-                    get: { Double(vm.selectedCount) },
-                    set: { vm.setQuestionCount(Int($0)) }
-                ), in: Double(vm.minQuestions)...Double(vm.maxQuestions), step: 5)
+                Slider(
+                    value: $sliderValue,
+                    in: Double(vm.minQuestions)...Double(vm.maxQuestions),
+                    step: 5,
+                    onEditingChanged: { editing in
+                        if !editing {
+                            vm.setQuestionCount(Int(sliderValue))
+                        }
+                    }
+                )
                 .accessibilityLabel("Number of Questions")
                 .padding(.horizontal)
 
                 Button {
+                    vm.setQuestionCount(Int(sliderValue))
                     vm.setQuizMode(.standard)
                     vm.startQuiz()
                 } label: {
@@ -84,6 +95,7 @@ struct ContentView: View {
                     GridItem(.flexible())
                 ], spacing: 12) {
                     Button {
+                        vm.setQuestionCount(Int(sliderValue))
                         vm.setQuizMode(.regularOnly)
                         vm.startQuiz()
                     } label: {
@@ -103,6 +115,7 @@ struct ContentView: View {
                     .buttonStyle(.plain)
 
                     Button {
+                        vm.setQuestionCount(Int(sliderValue))
                         vm.setQuizMode(.trueFalseOnly)
                         vm.startQuiz()
                     } label: {
@@ -122,6 +135,7 @@ struct ContentView: View {
                     .buttonStyle(.plain)
 
                     Button {
+                        vm.setQuestionCount(Int(sliderValue))
                         vm.setQuizMode(.imageOnly)
                         vm.startQuiz()
                     } label: {
@@ -141,6 +155,7 @@ struct ContentView: View {
                     .buttonStyle(.plain)
 
                     Button {
+                        vm.setQuestionCount(Int(sliderValue))
                         vm.setQuizMode(.criticalOnly)
                         vm.startQuiz()
                     } label: {
@@ -162,6 +177,7 @@ struct ContentView: View {
 
                 // Study Mode as wider button below
                 Button {
+                    vm.setQuestionCount(Int(sliderValue))
                     vm.setQuizMode(.study)
                     vm.startQuiz()
                 } label: {

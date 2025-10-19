@@ -13,16 +13,25 @@ struct StudyView: View {
     @State private var selectedTab = 0
     @State private var currentIndex = 0
     @State private var showAnswer = false
+    @State private var tappedIndex: Int? = nil
 
-    private let tabs = ["All", "T/F", "Images", "Critical"]
+    private let tabs = ["All", "Regular", "T/F", "Images", "Critical"]
 
         private var filteredQuestions: [QuizQuestion] {
         switch selectedTab {
-        case 0: return questions
-        case 1: return questions.filter { $0.tf }
-        case 2: return questions.filter { $0.imageName != nil }
-        case 3: return questions.filter { $0.isCritical }
-        default: return questions
+        case 0:
+            return questions
+        case 1:
+            // Regular: no images, not True/False, not critical
+            return questions.filter { !$0.isCritical && !$0.tf && $0.imageName == nil }
+        case 2:
+            return questions.filter { $0.tf }
+        case 3:
+            return questions.filter { $0.imageName != nil }
+        case 4:
+            return questions.filter { $0.isCritical }
+        default:
+            return questions
         }
     }
 
@@ -62,6 +71,7 @@ struct StudyView: View {
                 Button("Random") {
                     currentIndex = Int.random(in: 0..<filteredQuestions.count)
                     showAnswer = false
+                    tappedIndex = nil
                 }
                 .font(.subheadline)
                 .foregroundStyle(.blue)
@@ -98,22 +108,50 @@ struct StudyView: View {
                                     .multilineTextAlignment(.leading)
                                 Spacer()
                                 if showAnswer {
-                                    Image(systemName: index == filteredQuestions[safeCurrentIndex].correctIndex ? "checkmark.circle.fill" : "xmark.circle.fill")
-                                        .foregroundStyle(index == filteredQuestions[safeCurrentIndex].correctIndex ? .green : .red)
-                                        .font(.title2)
+                                    if index == filteredQuestions[safeCurrentIndex].correctIndex {
+                                        Image(systemName: "checkmark.circle.fill")
+                                            .foregroundStyle(.green)
+                                            .font(.title2)
+                                    } else if tappedIndex == index {
+                                        Image(systemName: "xmark.circle.fill")
+                                            .foregroundStyle(.red)
+                                            .font(.title2)
+                                    }
                                 }
                             }
                             .padding()
                             .frame(maxWidth: .infinity, alignment: .leading)
-                                                        .background(showAnswer ?
-                                (index == filteredQuestions[currentIndex].correctIndex ? Color.green.opacity(0.2) : Color.red.opacity(0.2)) :
-                                AppTheme.secondaryButton)
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                // Avoid redundant state updates/animations on repeated taps
+                                if tappedIndex == index && showAnswer { return }
+                                withAnimation(.easeInOut(duration: 0.2)) {
+                                    tappedIndex = index
+                                    if !showAnswer { showAnswer = true }
+                                }
+                            }
+                            .background(
+                                showAnswer ?
+                                    (
+                                        index == filteredQuestions[safeCurrentIndex].correctIndex
+                                        ? Color.green.opacity(0.2)
+                                        : (tappedIndex == index ? Color.red.opacity(0.2) : AppTheme.secondaryButton)
+                                    )
+                                    : AppTheme.secondaryButton
+                            )
                             .clipShape(RoundedRectangle(cornerRadius: 12))
                             .overlay(
                                 RoundedRectangle(cornerRadius: 12)
-                                    .stroke(showAnswer ?
-                                        (index == filteredQuestions[currentIndex].correctIndex ? Color.green : Color.red) :
-                                        Color.clear, lineWidth: 1.5)
+                                    .stroke(
+                                        showAnswer ?
+                                            (
+                                                index == filteredQuestions[safeCurrentIndex].correctIndex
+                                                ? Color.green
+                                                : (tappedIndex == index ? Color.red : Color.clear)
+                                            )
+                                            : Color.clear,
+                                        lineWidth: 1.5
+                                    )
                             )
                         }
                     }
@@ -130,6 +168,7 @@ struct StudyView: View {
                 Button {
                     withAnimation(.easeInOut(duration: 0.3)) {
                         showAnswer.toggle()
+                        if !showAnswer { tappedIndex = nil }
                     }
                 } label: {
                     Label(showAnswer ? "Hide Answer" : "Show Answer",
@@ -148,6 +187,7 @@ struct StudyView: View {
                         withAnimation(.easeInOut(duration: 0.3)) {
                             currentIndex = max(0, currentIndex - 1)
                             showAnswer = false
+                            tappedIndex = nil
                         }
                     } label: {
                         Label("Previous", systemImage: "chevron.left")
@@ -164,6 +204,7 @@ struct StudyView: View {
                         withAnimation(.easeInOut(duration: 0.3)) {
                             currentIndex = min(filteredQuestions.count - 1, currentIndex + 1)
                             showAnswer = false
+                            tappedIndex = nil
                         }
                     } label: {
                         Label("Next", systemImage: "chevron.right")
@@ -195,9 +236,10 @@ struct StudyView: View {
         }
         .navigationTitle("Study Mode")
         .navigationBarTitleDisplayMode(.inline)
-        .onChange(of: selectedTab) { oldValue, newValue in
+        .onChange(of: selectedTab) { _, _ in
             currentIndex = 0
             showAnswer = false
+            tappedIndex = nil
         }
         .onAppear {
             // Ensure currentIndex is valid when view appears

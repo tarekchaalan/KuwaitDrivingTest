@@ -31,8 +31,8 @@ struct QuestionCard: View {
                 .font(.title3.weight(.semibold))
                 .accessibilityAddTraits(.isHeader)
                 .fixedSize(horizontal: false, vertical: true)
-                .minimumScaleFactor(0.7) // Allow font to shrink to 70% of original size
-                .lineLimit(nil) // Allow unlimited lines
+                .minimumScaleFactor(0.6) // Allow font to shrink to 70% of original size
+                .lineLimit(.max) // unlimited lines
                 .multilineTextAlignment(.leading)
 
             if let img = question.imageName, UIImage(named: img) != nil {
@@ -73,7 +73,7 @@ private struct AnswerRow: View {
                 .font(.body)
                 .multilineTextAlignment(.leading)
                 .minimumScaleFactor(0.8) // Allow answer text to shrink to 80% of original size
-                .lineLimit(nil) // Allow unlimited lines
+                .lineLimit(.max) // unlimited lines
             Spacer()
         }
         .padding()
