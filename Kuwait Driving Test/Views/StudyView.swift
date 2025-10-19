@@ -80,11 +80,15 @@ struct StudyView: View {
             .padding(.horizontal)
 
                 // Flashcard
-                VStack(spacing: 20) {
+                ScrollView {
+                    VStack(spacing: 20) {
                     // Question text and pin
                     HStack(alignment: .top, spacing: 8) {
                         Text(filteredQuestions[safeCurrentIndex].text)
                             .font(.title3.weight(.semibold))
+                            .lineLimit(nil)
+                            .minimumScaleFactor(0.5)
+                            .allowsTightening(true)
                             .multilineTextAlignment(.leading)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         Button {
@@ -102,12 +106,12 @@ struct StudyView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 16))
 
                     // Image if available
-                    if let imageName = filteredQuestions[safeCurrentIndex].imageName,
-                       UIImage(named: imageName) != nil {
+                        if let imageName = filteredQuestions[safeCurrentIndex].imageName,
+                           UIImage(named: imageName) != nil {
                         Image(imageName)
                             .resizable()
                             .scaledToFit()
-                            .frame(maxHeight: 200)
+                                .frame(maxHeight: 170)
                             .clipShape(RoundedRectangle(cornerRadius: 14))
                     }
 
@@ -168,8 +172,9 @@ struct StudyView: View {
                         }
                     }
 
-                                    }
-                .padding(.horizontal)
+                    }
+                    .padding(.horizontal)
+                }
             }
 
             Spacer()

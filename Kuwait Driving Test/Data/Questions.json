@@ -1400,11 +1400,11 @@
   },
   {
     "id": 107,
-    "text": "The penalty for anyone who publishes a video recording while committing any offense under the Traffic Law, as per Article 36 bis:",
+    "text": "The penalty for anyone who publishes a video recording while committing any offense under the Traffic Law, as per Article 36, will receive a fine ranging from:",
     "answers": [
-      "Fine ranging from 500 to 1,000 KWD",
-      "Fine ranging from 1,000 to 2,000 KWD",
-      "Fine ranging from 2,000 to 3,000 KWD"
+      "500 to 1,000 KWD",
+      "1,000 to 2,000 KWD",
+      "2,000 to 3,000 KWD"
     ],
     "correctIndex": 1,
     "imageName": null,

@@ -11,6 +11,9 @@ struct QuizView: View {
     @ObservedObject var vm: QuizViewModel
     @State private var showExitAlert = false
     @State private var showHistory = false
+    @State private var savedSelectedTab = 1 // 0 study-like, 1 quiz
+    @State private var savedStudyShowAnswer = false
+    @State private var savedStudyTappedIndex: Int? = nil
 
     var body: some View {
         if vm.quizMode == .study {
@@ -35,8 +38,10 @@ struct QuizView: View {
                     }
                 }
 
-                // Hide header when Saved has no questions
-                if !(vm.quizMode == .savedOnly && vm.questions.isEmpty) {
+                // Saved mode: provide tabs for Study vs Quiz
+                if vm.quizMode == .savedOnly {
+                    SavedHeaderTabs(vm: vm, selected: $savedSelectedTab)
+                } else {
                     header
                 }
 
@@ -50,16 +55,25 @@ struct QuizView: View {
                             .foregroundStyle(.secondary)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else if vm.quizMode == .savedOnly && savedSelectedTab == 0 {
+                    // STUDY-like view for Saved
+                    let q = vm.questions[vm.currentIndex]
+                    ScrollView { savedStudyContent(q).frame(maxWidth: .infinity) }
+                    savedStudyControls()
                 } else if let q = vm.currentQuestion {
-                    QuestionCard(
-                        question: q,
-                        selectedIndex: vm.selectedAnswerIndex,
-                        onSelect: vm.selectAnswer(_:),
-                        isPinned: vm.isPinned(q),
-                        onTogglePin: { vm.togglePin($0) }
-                    )
+                    ScrollView {
+                        QuestionCard(
+                            question: q,
+                            selectedIndex: vm.selectedAnswerIndex,
+                            onSelect: vm.selectAnswer(_:),
+                            isPinned: vm.isPinned(q),
+                            onTogglePin: { vm.togglePin($0) }
+                        )
+                    }
                     Spacer(minLength: 8)
-                    submitBar
+                    if !(vm.quizMode == .savedOnly && vm.questions.isEmpty) {
+                        submitBar
+                    }
                 } else {
                     ProgressView()
                 }
@@ -98,6 +112,164 @@ struct QuizView: View {
         .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         .accessibilityElement(children: .combine)
         .accessibilityLabel("Progress. Question \(vm.currentIndex + 1) of \(vm.questions.count). Score \(vm.correctCount)")
+    }
+
+    // MARK: - Saved Study Helpers
+
+    @ViewBuilder
+    private func savedStudyContent(_ q: QuizQuestion) -> some View {
+        VStack(spacing: 16) {
+            HStack(alignment: .top, spacing: 8) {
+                Text(q.text)
+                    .font(.title3.weight(.semibold))
+                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(nil)
+                    .minimumScaleFactor(0.5)
+                    .allowsTightening(true)
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                let pinned = vm.isPinned(q)
+                Button { vm.togglePin(q) } label: {
+                    Image(systemName: pinned ? "pin.fill" : "pin")
+                        .foregroundStyle(pinned ? .orange : .secondary)
+                }
+                .buttonStyle(.plain)
+            }
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(AppTheme.cardBackground)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+
+            if let img = q.imageName, UIImage(named: img) != nil {
+                Image(img)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxHeight: 170)
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
+            }
+
+            VStack(spacing: 12) {
+                ForEach(q.answers.indices, id: \.self) { idx in
+                    let isCorrect = (idx == q.correctIndex)
+                    let isTappedWrong = (savedStudyTappedIndex == idx && !isCorrect)
+                    HStack {
+                        Text(q.answers[idx])
+                            .font(.body)
+                            .multilineTextAlignment(.leading)
+                        Spacer()
+                        if savedStudyShowAnswer {
+                            if isCorrect {
+                                Image(systemName: "checkmark.circle.fill").foregroundStyle(.green).font(.title2)
+                            } else if isTappedWrong {
+                                Image(systemName: "xmark.circle.fill").foregroundStyle(.red).font(.title2)
+                            }
+                        }
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        if savedStudyTappedIndex == idx && savedStudyShowAnswer { return }
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            savedStudyTappedIndex = idx
+                            if !savedStudyShowAnswer { savedStudyShowAnswer = true }
+                        }
+                    }
+                    .background(savedStudyBackground(isCorrect: isCorrect, isTappedWrong: isTappedWrong))
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(savedStudyStroke(isCorrect: isCorrect, isTappedWrong: isTappedWrong), lineWidth: 1.5)
+                    )
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func savedStudyControls() -> some View {
+        VStack(spacing: 16) {
+            Button { toggleSavedStudyAnswer() } label: {
+                Label(savedStudyShowAnswer ? "Hide Answer" : "Show Answer",
+                      systemImage: savedStudyShowAnswer ? "eye.slash" : "eye")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(.ultraThickMaterial)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+            }
+            .buttonStyle(.plain)
+
+            HStack(spacing: 20) {
+                Button { savedStudyPrev() } label: {
+                    Label("Previous", systemImage: "chevron.left")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(AppTheme.secondaryButton)
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                }
+                .buttonStyle(.plain)
+                .disabled(vm.currentIndex == 0)
+
+                Button { savedStudyNext() } label: {
+                    Label("Next", systemImage: "chevron.right")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(AppTheme.secondaryButton)
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                }
+                .buttonStyle(.plain)
+                .disabled(vm.currentIndex >= vm.questions.count - 1)
+            }
+
+            Button { vm.restart() } label: {
+                Label("Exit", systemImage: "xmark.circle.fill")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(AppTheme.dangerButton)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+            }
+            .buttonStyle(.plain)
+        }
+    }
+
+    private func savedStudyBackground(isCorrect: Bool, isTappedWrong: Bool) -> Color {
+        guard savedStudyShowAnswer else { return AppTheme.secondaryButton }
+        if isCorrect { return Color.green.opacity(0.2) }
+        return isTappedWrong ? Color.red.opacity(0.2) : AppTheme.secondaryButton
+    }
+
+    private func savedStudyStroke(isCorrect: Bool, isTappedWrong: Bool) -> Color {
+        guard savedStudyShowAnswer else { return Color.clear }
+        if isCorrect { return Color.green }
+        return isTappedWrong ? Color.red : Color.clear
+    }
+
+    private func toggleSavedStudyAnswer() {
+        withAnimation(.easeInOut(duration: 0.3)) {
+            savedStudyShowAnswer.toggle()
+            if !savedStudyShowAnswer { savedStudyTappedIndex = nil }
+        }
+    }
+
+    private func savedStudyPrev() {
+        withAnimation(.easeInOut(duration: 0.3)) {
+            vm.goToPreviousQuestion()
+            savedStudyShowAnswer = false
+            savedStudyTappedIndex = nil
+        }
+    }
+
+    private func savedStudyNext() {
+        withAnimation(.easeInOut(duration: 0.3)) {
+            vm.goToNextQuestion()
+            savedStudyShowAnswer = false
+            savedStudyTappedIndex = nil
+        }
     }
 
     private var submitBar: some View {

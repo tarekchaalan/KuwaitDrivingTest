@@ -154,6 +154,27 @@ final class QuizViewModel: ObservableObject {
         self.questions = saved.shuffled()
     }
 
+    func reshuffleSavedQuestionsForQuiz() {
+        guard quizMode == .savedOnly else { return }
+        let saved = allQuestions.filter { pinnedQuestionIds.contains($0.id) }
+        self.questions = saved.shuffled()
+        currentIndex = 0
+        selectedAnswerIndex = nil
+        correctCount = 0
+        answeredCriticalWrong = false
+    }
+
+    // MARK: - Navigation helpers (for Saved study-like UI)
+    func goToPreviousQuestion() {
+        guard currentIndex > 0 else { return }
+        currentIndex -= 1
+    }
+
+    func goToNextQuestion() {
+        guard currentIndex + 1 < questions.count else { return }
+        currentIndex += 1
+    }
+
     private func startStudyMode() {
         // For study mode, we'll use all questions but this will be handled differently in the UI
         self.questions = allQuestions.shuffled()
@@ -289,5 +310,34 @@ final class QuizViewModel: ObservableObject {
             pinnedQuestionIds.insert(question.id)
         }
         savePinned()
+
+        // If currently in Saved mode, immediately reflect removal/addition in active quiz set
+        if quizMode == .savedOnly {
+            // Keep current order for existing items, drop unpinned, and append any newly pinned not present
+            let currentIds = Set(questions.map { $0.id })
+            // Drop any that are no longer pinned
+            questions.removeAll { !pinnedQuestionIds.contains($0.id) }
+            // Append any newly pinned that weren't present
+            let newlyPinned = allQuestions.filter { pinnedQuestionIds.contains($0.id) && !currentIds.contains($0.id) }
+            if !newlyPinned.isEmpty {
+                questions.append(contentsOf: newlyPinned.shuffled())
+            }
+
+            // Clamp current index
+            if currentIndex >= questions.count {
+                currentIndex = max(0, questions.count - 1)
+            }
+        }
+    }
+
+    // Expose saved questions list
+    func savedQuestionsList() -> [QuizQuestion] {
+        allQuestions.filter { pinnedQuestionIds.contains($0.id) }
+    }
+
+    // History management
+    func removeHistory(at offsets: IndexSet) {
+        history.remove(atOffsets: offsets)
+        saveHistory()
     }
 }

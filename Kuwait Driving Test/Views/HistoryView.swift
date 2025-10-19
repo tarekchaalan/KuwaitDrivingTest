@@ -78,6 +78,7 @@ struct HistoryView: View {
                             }
                         }
                     }
+                    .onDelete { offsets in vm.removeHistory(at: offsets) }
                 }
                 .listStyle(.plain)
             }

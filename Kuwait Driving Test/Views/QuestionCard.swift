@@ -34,8 +34,9 @@ struct QuestionCard: View {
                     .font(.title3.weight(.semibold))
                     .accessibilityAddTraits(.isHeader)
                     .fixedSize(horizontal: false, vertical: true)
-                    .minimumScaleFactor(0.6) // Allow font to shrink to 60% of original size
-                    .lineLimit(.max) // unlimited lines
+                    .minimumScaleFactor(0.5)
+                    .lineLimit(nil)
+                    .allowsTightening(true)
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 if let onTogglePin {
@@ -54,7 +55,7 @@ struct QuestionCard: View {
                 Image(img)
                     .resizable()
                     .scaledToFit()
-                    .frame(maxHeight: 200)
+                    .frame(maxHeight: 170)
                     .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
                     .overlay(RoundedRectangle(cornerRadius: 14).stroke(.thinMaterial))
             }
