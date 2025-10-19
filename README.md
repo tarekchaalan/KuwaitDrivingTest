@@ -1074,7 +1074,7 @@ A modern, dark‑themed SwiftUI app to practice for the Kuwait driving theory ex
 ### Requirements
 
 - Xcode 15+
-- iOS 17+ (Simulator or device)
+- iOS 26 | Also Supports iOS 18 (Simulator or device)
 - Swift 5.9+
 
 ### Run
