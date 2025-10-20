@@ -53,30 +53,47 @@ struct HistoryView: View {
             } else {
                 List {
                     ForEach(attempts) { a in
-                        HStack(spacing: 12) {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(a.mode.rawValue)
-                                    .font(.subheadline.weight(.semibold))
-                                Text(a.date.formatted(date: .abbreviated, time: .shortened))
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
-                            }
-                            Spacer()
-                            VStack(alignment: .trailing, spacing: 4) {
-                                Text("\(a.correct)/\(a.total)")
-                                    .font(.subheadline)
-                                HStack(spacing: 6) {
-                                    if a.failedCritical {
-                                        Label("Critical Fail", systemImage: "exclamationmark.triangle.fill")
-                                            .foregroundStyle(.yellow)
-                                            .font(.caption)
-                                    }
-                                    Text(a.passed ? "Passed" : "Failed")
-                                        .font(.caption.weight(.semibold))
-                                        .foregroundStyle(a.passed && !a.failedCritical ? .green : .red)
+                        Button {
+                            if a.correct < a.total {
+                                withAnimation(.easeInOut(duration: 0.25)) {
+                                    vm.reviewWrongAnswers(from: a)
+                                }
+                                // Close the sheet slightly after to allow view switch animation
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                    onClose()
                                 }
                             }
+                        } label: {
+                            HStack(spacing: 12) {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text(a.mode.rawValue)
+                                        .font(.subheadline.weight(.semibold))
+                                    Text(a.date.formatted(date: .abbreviated, time: .shortened))
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                }
+                                Spacer()
+                                VStack(alignment: .trailing, spacing: 4) {
+                                    Text("\(a.correct)/\(a.total)")
+                                        .font(.subheadline)
+                                    HStack(spacing: 6) {
+                                        if a.failedCritical {
+                                            Label("Critical Fail", systemImage: "exclamationmark.triangle.fill")
+                                                .foregroundStyle(.yellow)
+                                                .font(.caption)
+                                        }
+                                        Text(a.passed ? "Passed" : "Failed")
+                                            .font(.caption.weight(.semibold))
+                                            .foregroundStyle(a.passed && !a.failedCritical ? .green : .red)
+                                    }
+                                }
+                            }
+                            .contentShape(Rectangle())
                         }
+                        .buttonStyle(.plain)
+                        .disabled(a.correct == a.total)
+                        .opacity(a.correct == a.total ? 0.5 : 1)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     .onDelete { offsets in vm.removeHistory(at: offsets) }
                 }

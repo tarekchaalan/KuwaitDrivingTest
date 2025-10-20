@@ -4,6 +4,7 @@ struct ResultView: View {
     let result: QuizResult
     let onRestart: () -> Void
     let onRetake: () -> Void
+    let onReviewWrong: () -> Void
 
     @State private var showConfetti = false
     private var isPerfect: Bool { result.passed && result.correct == result.total }
@@ -18,6 +19,20 @@ struct ResultView: View {
                 VStack(spacing: 14) {
                     metricRow(title: "Score", value: "\(result.correct)/\(result.total)")
                     metricRow(title: "Passing Score", value: "≥ \(result.passingScore)")
+                    Button {
+                        onReviewWrong()
+                    } label: {
+                        Label("Review Wrong Answers", systemImage: "book")
+                            .frame(maxWidth: .infinity)
+                            .padding(10)
+                    }
+                    .buttonStyle(.plain)
+                    .frame(maxWidth: .infinity)
+                    .background(result.correct == result.total ? Color.gray.opacity(0.3) : Color.accentColor)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    .disabled(result.correct == result.total)
+                    .accessibilityHint("Open study screen with only the questions you answered incorrectly")
                 }
                 .appCard()
                 .padding(.horizontal)

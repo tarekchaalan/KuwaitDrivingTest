@@ -24,7 +24,12 @@ struct ContentView: View {
             case .inProgress:
                 QuizView(vm: vm)
             case .finished(let result):
-                ResultView(result: result, onRestart: { vm.restart() }, onRetake: { vm.startQuiz() })
+                ResultView(
+                    result: result,
+                    onRestart: { vm.restart() },
+                    onRetake: { vm.startQuiz() },
+                    onReviewWrong: { vm.startReviewWrongQuestions() }
+                )
             }
         }
         .preferredColorScheme(.dark) // force dark theme
@@ -96,11 +101,6 @@ struct ContentView: View {
 
             // Specialized Quiz Modes
             VStack(spacing: 12) {
-                Text("Specialized Quiz Modes")
-                    .font(.headline)
-                    .foregroundStyle(.secondary)
-
-                                // First 4 modes in 2x2 grid
                 LazyVGrid(columns: [
                     GridItem(.flexible()),
                     GridItem(.flexible())

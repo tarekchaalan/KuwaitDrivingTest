@@ -39,6 +39,7 @@ final class QuizViewModel: ObservableObject {
     @Published private(set) var selectedAnswerIndex: Int? = nil
     @Published private(set) var correctCount: Int = 0
     @Published private(set) var answeredCriticalWrong: Bool = false
+    @Published private(set) var wrongQuestions: [QuizQuestion] = []
 
     // Pinned questions
     @Published private(set) var pinnedQuestionIds: Set<Int> = []
@@ -67,6 +68,9 @@ final class QuizViewModel: ObservableObject {
     func startQuiz() {
         feedback.prepare()
 
+        // Reset per-quiz state
+        wrongQuestions = []
+
         switch quizMode {
         case .standard:
             startStandardQuiz()
@@ -92,37 +96,49 @@ final class QuizViewModel: ObservableObject {
     }
 
     private func startStandardQuiz() {
-        // New distribution logic:
-        // critical = round(0.05 * n)
-        // true/false = round(0.15 * n)
-        // image = round(0.25 * n)
-        // regular = n - (crit + tf + img)
+        // Target mix (approximate) with exact final count and no duplicates
+        let requestedCritical = Int(round(0.05 * Double(selectedCount)))
+        let requestedTF = Int(round(0.15 * Double(selectedCount)))
+        let requestedImage = Int(round(0.25 * Double(selectedCount)))
 
-        let criticalCount = Int(round(0.05 * Double(selectedCount)))
-        let tfCount = Int(round(0.15 * Double(selectedCount)))
-        let imageCount = Int(round(0.25 * Double(selectedCount)))
-        let regularCount = selectedCount - criticalCount - tfCount - imageCount
-
-        // Get question pools
+        // Pools
         let allCriticals = allQuestions.filter { $0.isCritical }
         let allTF = allQuestions.filter { $0.tf }
         let allImages = allQuestions.filter { $0.imageName != nil }
         let allRegular = allQuestions.filter { !$0.isCritical && !$0.tf && $0.imageName == nil }
 
-        // Select questions from each pool
-        let selectedCriticals = allCriticals.shuffled().prefix(criticalCount)
-        let selectedTF = allTF.shuffled().prefix(tfCount)
-        let selectedImages = allImages.shuffled().prefix(imageCount)
-        let selectedRegular = allRegular.shuffled().prefix(regularCount)
+        var chosenIds = Set<Int>()
+        var selected: [QuizQuestion] = []
 
-        // Combine and shuffle
-        var displayQuestions: [QuizQuestion] = []
-        displayQuestions.append(contentsOf: selectedCriticals)
-        displayQuestions.append(contentsOf: selectedTF)
-        displayQuestions.append(contentsOf: selectedImages)
-        displayQuestions.append(contentsOf: selectedRegular)
+        func take(upTo n: Int, from pool: [QuizQuestion]) {
+            if n <= 0 { return }
+            let picks = pool.shuffled().filter { !chosenIds.contains($0.id) }.prefix(n)
+            for q in picks {
+                selected.append(q)
+                chosenIds.insert(q.id)
+            }
+        }
 
-        self.questions = displayQuestions.shuffled()
+        // Try to satisfy category quotas first
+        take(upTo: requestedCritical, from: allCriticals)
+        take(upTo: requestedTF, from: allTF)
+        take(upTo: requestedImage, from: allImages)
+
+        // Allocate remaining to regulars
+        let remainingAfterCategories = max(0, selectedCount - selected.count)
+        take(upTo: remainingAfterCategories, from: allRegular)
+
+        // Final backfill from any remaining questions to reach exact count
+        if selected.count < selectedCount {
+            let remaining = allQuestions.shuffled().filter { !chosenIds.contains($0.id) }
+            let need = selectedCount - selected.count
+            for q in remaining.prefix(need) {
+                selected.append(q)
+                chosenIds.insert(q.id)
+            }
+        }
+
+        self.questions = selected.shuffled()
     }
 
     private func startRegularOnlyQuiz() {
@@ -203,6 +219,9 @@ final class QuizViewModel: ObservableObject {
             correctCount += 1
             feedback.notificationOccurred(.success)
         } else {
+            if !wrongQuestions.contains(where: { $0.id == q.id }) {
+                wrongQuestions.append(q)
+            }
             if q.isCritical {
                 answeredCriticalWrong = true
                 feedback.notificationOccurred(.error)
@@ -246,6 +265,18 @@ final class QuizViewModel: ObservableObject {
         quizMode = .standard
     }
 
+    // MARK: - Wrong Answers Review
+    func startReviewWrongQuestions() {
+        guard !wrongQuestions.isEmpty else { return }
+        quizMode = .study
+        questions = wrongQuestions
+        currentIndex = 0
+        selectedAnswerIndex = nil
+        correctCount = 0
+        answeredCriticalWrong = false
+        state = .inProgress
+    }
+
     // MARK: - History Persistence
 
     private let historyStoreKey = "QuizAttemptHistory"
@@ -270,6 +301,7 @@ final class QuizViewModel: ObservableObject {
     }
 
     private func appendHistory(from result: QuizResult) {
+        let wrongIds = wrongQuestions.map { $0.id }
         let attempt = QuizAttempt(
             id: UUID(),
             date: Date(),
@@ -278,11 +310,29 @@ final class QuizViewModel: ObservableObject {
             correct: result.correct,
             passed: result.passed,
             failedCritical: result.failedCritical,
-            passingScore: result.passingScore
+            passingScore: result.passingScore,
+            wrongQuestionIds: wrongIds
         )
         history.insert(attempt, at: 0)
         if history.count > 200 { history.removeLast(history.count - 200) }
         saveHistory()
+    }
+
+    // Launch study mode showing the wrong questions of a past attempt
+    func reviewWrongAnswers(from attempt: QuizAttempt) {
+        guard !attempt.wrongQuestionIds.isEmpty else { return }
+        let idSet = Set(attempt.wrongQuestionIds)
+        let reviewQuestions = allQuestions.filter { idSet.contains($0.id) }
+        guard !reviewQuestions.isEmpty else { return }
+        withAnimation(.easeInOut(duration: 0.25)) {
+            quizMode = .study
+            questions = reviewQuestions
+            currentIndex = 0
+            selectedAnswerIndex = nil
+            correctCount = 0
+            answeredCriticalWrong = false
+            state = .inProgress
+        }
     }
 
     // MARK: - Pinning

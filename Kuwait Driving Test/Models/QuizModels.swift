@@ -71,4 +71,35 @@ struct QuizAttempt: Identifiable, Codable, Equatable {
     let passed: Bool
     let failedCritical: Bool
     let passingScore: Int
+    // IDs of questions answered incorrectly (for review). Optional in older history.
+    let wrongQuestionIds: [Int]
+
+    enum CodingKeys: String, CodingKey {
+        case id, date, mode, total, correct, passed, failedCritical, passingScore, wrongQuestionIds
+    }
+
+    init(id: UUID, date: Date, mode: QuizMode, total: Int, correct: Int, passed: Bool, failedCritical: Bool, passingScore: Int, wrongQuestionIds: [Int] = []) {
+        self.id = id
+        self.date = date
+        self.mode = mode
+        self.total = total
+        self.correct = correct
+        self.passed = passed
+        self.failedCritical = failedCritical
+        self.passingScore = passingScore
+        self.wrongQuestionIds = wrongQuestionIds
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(UUID.self, forKey: .id)
+        date = try container.decode(Date.self, forKey: .date)
+        mode = try container.decode(QuizMode.self, forKey: .mode)
+        total = try container.decode(Int.self, forKey: .total)
+        correct = try container.decode(Int.self, forKey: .correct)
+        passed = try container.decode(Bool.self, forKey: .passed)
+        failedCritical = try container.decode(Bool.self, forKey: .failedCritical)
+        passingScore = try container.decode(Int.self, forKey: .passingScore)
+        wrongQuestionIds = (try? container.decode([Int].self, forKey: .wrongQuestionIds)) ?? []
+    }
 }
