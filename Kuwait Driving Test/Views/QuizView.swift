@@ -16,7 +16,7 @@ struct QuizView: View {
     @State private var savedStudyTappedIndex: Int? = nil
 
     var body: some View {
-        if vm.quizMode == .study {
+        if vm.quizMode == .study || vm.quizMode == .difficultStudy {
             StudyView(questions: vm.questions, onExit: { vm.exitStudyMode() }, vm: vm)
                 .transition(.opacity.combined(with: .scale))
         } else {

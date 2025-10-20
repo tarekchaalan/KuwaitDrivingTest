@@ -125,6 +125,7 @@ struct ContentView: View {
                     }
                     .buttonStyle(.plain)
 
+                    .buttonStyle(.plain)
                     Button {
                         vm.setQuestionCount(Int(sliderValue))
                         vm.setQuizMode(.trueFalseOnly)
@@ -186,6 +187,47 @@ struct ContentView: View {
                     .buttonStyle(.plain)
                 }
 
+                HStack(spacing: 12) {
+                    Button {
+                        vm.setQuizMode(.difficultStudy)
+                        vm.startQuiz()
+                    } label: {
+                        VStack(spacing: 8) {
+                            Image(systemName: "book.fill")
+                                .font(.title2)
+                                .foregroundStyle(.pink)
+                            Text("Difficult Study")
+                                .font(.subheadline.weight(.semibold))
+                                .multilineTextAlignment(.center)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(AppTheme.cardBackground)
+                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
+
+                    Button {
+                        vm.setQuestionCount(Int(sliderValue))
+                        vm.setQuizMode(.difficultOnly)
+                        vm.startQuiz()
+                    } label: {
+                        VStack(spacing: 8) {
+                            Image(systemName: "exclamationmark.circle.fill")
+                                .font(.title2)
+                                .foregroundStyle(.pink)
+                            Text("Difficult Quiz")
+                                .font(.subheadline.weight(.semibold))
+                                .multilineTextAlignment(.center)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(AppTheme.cardBackground)
+                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
+                }
+
                 // Study and Saved buttons side-by-side
                 HStack(spacing: 12) {
                     Button {
@@ -207,6 +249,7 @@ struct ContentView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                     }
                     .buttonStyle(.plain)
+
 
                     Button {
                         vm.setQuestionCount(Int(sliderValue))

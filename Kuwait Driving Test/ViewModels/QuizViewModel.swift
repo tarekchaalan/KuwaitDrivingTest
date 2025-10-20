@@ -15,6 +15,8 @@ enum QuizMode: String, CaseIterable, Codable {
     case trueFalseOnly = "True/False Questions Only"
     case imageOnly = "Questions with Images Only"
     case savedOnly = "Saved Questions Only"
+    case difficultOnly = "Difficult Topics"
+    case difficultStudy = "Difficult Study"
     case study = "Study Mode"
 }
 
@@ -84,6 +86,10 @@ final class QuizViewModel: ObservableObject {
             startImageOnlyQuiz()
         case .savedOnly:
             startSavedOnlyQuiz()
+        case .difficultOnly:
+            startDifficultOnlyQuiz()
+        case .difficultStudy:
+            startDifficultStudy()
         case .study:
             startStudyMode()
         }
@@ -159,6 +165,32 @@ final class QuizViewModel: ObservableObject {
     private func startImageOnlyQuiz() {
         let imageQuestions = allQuestions.filter { $0.imageName != nil }
         self.questions = imageQuestions.shuffled()
+    }
+
+    // MARK: - Difficult (keyword-based)
+    private func difficultKeywords() -> [String] {
+        ["imprisonment", "exceeding", "kd", "kwd", "fine", "article", "articles", "impound", "punishable", "court"]
+    }
+
+    private func isDifficult(_ q: QuizQuestion) -> Bool {
+        let keywords = difficultKeywords()
+        let lowerText = q.text.lowercased()
+        if keywords.contains(where: { lowerText.contains($0) }) { return true }
+        let answersText = q.answers.joined(separator: " ").lowercased()
+        if keywords.contains(where: { answersText.contains($0) }) { return true }
+        return false
+    }
+
+    private func difficultQuestions() -> [QuizQuestion] {
+        allQuestions.filter { isDifficult($0) }
+    }
+
+    private func startDifficultOnlyQuiz() {
+        self.questions = difficultQuestions().shuffled()
+    }
+
+    private func startDifficultStudy() {
+        self.questions = difficultQuestions().shuffled()
     }
 
     private func startSavedOnlyQuiz() {
