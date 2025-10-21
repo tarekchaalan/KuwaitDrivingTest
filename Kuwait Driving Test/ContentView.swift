@@ -13,6 +13,7 @@ struct ContentView: View {
 //    @State private var confettiTick = 0 // CONFETTI TEST
     @State private var sliderValue: Double = 20
     @State private var showHistory: Bool = false
+    @State private var showTranslationInfo: Bool = false
 
     var body: some View {
         ZStack {
@@ -40,9 +41,35 @@ struct ContentView: View {
 
     private var startScreen: some View {
         VStack(spacing: 24) {
-            // Top bar with history
+            // Top bar with language toggle + info (left) and history (right)
             HStack {
+                HStack(spacing: 3) {
+                    Button {
+                        vm.toggleLanguage()
+                    } label: {
+                        Text(vm.isArabic ? "A" : "ع")
+                            .font(.title3)
+                            .padding(.leading, 5)
+                            .padding(.vertical, 2)
+                    }
+                    .buttonStyle(.plain)
+
+                    Button {
+                        showTranslationInfo = true
+                    } label: {
+                        Image(systemName: "info.circle")
+                            .imageScale(.medium)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 4)
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel(vm.isArabic ? "معلومة عن الترجمة" : "Translation info")
+                }
+
                 Spacer()
+
                 Button {
                     showHistory = true
                 } label: {
@@ -54,17 +81,17 @@ struct ContentView: View {
             .padding(.horizontal)
             .padding(.top, 8)
             VStack(spacing: 8) {
-                Text("Kuwait Driving Test")
+                Text(vm.isArabic ? "اختبار القيادة - الكويت" : "Kuwait Driving Test")
                     .font(.largeTitle.bold())
                     .multilineTextAlignment(.center)
-                Text("Practice with real MOI questions.\nCritical questions cause instant fail.")
+                Text(vm.isArabic ? "تمرّن على أسئلة الوزارة الداخلية." : "Practice with real MOI questions.")
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.secondary)
             }
             .padding(.horizontal)
 
             VStack(spacing: 16) {
-                Text("Number of Questions: \(Int(sliderValue))")
+                Text(vm.isArabic ? "عدد الأسئلة: \(Int(sliderValue))" : "Number of Questions: \(Int(sliderValue))")
                     .font(.headline)
                 Slider(
                     value: $sliderValue,
@@ -84,7 +111,7 @@ struct ContentView: View {
                     vm.setQuizMode(.standard)
                     vm.startQuiz()
                 } label: {
-                    Label("Start Standard Quiz", systemImage: "play.fill")
+                    Label(vm.isArabic ? "ابدأ الاختبار القياسي" : "Start Standard Quiz", systemImage: "play.fill")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -92,7 +119,7 @@ struct ContentView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                 }
                 .buttonStyle(.plain)
-                .accessibilityHint("Begins a standard quiz with balanced question distribution")
+                .accessibilityHint(vm.isArabic ? "بدء اختبار قياسي بتوزيع متوازن" : "Begins a standard quiz with balanced question distribution")
             }
             .appCard()
             .padding(.horizontal)
@@ -114,7 +141,7 @@ struct ContentView: View {
                             Image(systemName: "doc.text.fill")
                                 .font(.title2)
                                 .foregroundStyle(.orange)
-                            Text("Regular Only")
+                            Text(vm.isArabic ? "عادي (س)" : "Regular (Q)")
                                 .font(.subheadline.weight(.semibold))
                                 .multilineTextAlignment(.center)
                         }
@@ -135,7 +162,7 @@ struct ContentView: View {
                             Image(systemName: "checkmark.circle.fill")
                                 .font(.title2)
                                 .foregroundStyle(.green)
-                            Text("True/False Only")
+                            Text(vm.isArabic ? "صح/خطأ (س)" : "True/False (Q)")
                                 .font(.subheadline.weight(.semibold))
                                 .multilineTextAlignment(.center)
                         }
@@ -155,7 +182,7 @@ struct ContentView: View {
                             Image(systemName: "photo.fill")
                                 .font(.title2)
                                 .foregroundStyle(.blue)
-                            Text("Images Only")
+                            Text(vm.isArabic ? "صور (س)" : "Images (Q)")
                                 .font(.subheadline.weight(.semibold))
                                 .multilineTextAlignment(.center)
                         }
@@ -175,7 +202,7 @@ struct ContentView: View {
                             Image(systemName: "exclamationmark.triangle.fill")
                                 .font(.title2)
                                 .foregroundStyle(.yellow)
-                            Text("Critical Only")
+                            Text(vm.isArabic ? "حرجة (س)" : "Critical (Q)")
                                 .font(.subheadline.weight(.semibold))
                                 .multilineTextAlignment(.center)
                         }
@@ -196,7 +223,7 @@ struct ContentView: View {
                             Image(systemName: "book.fill")
                                 .font(.title2)
                                 .foregroundStyle(.pink)
-                            Text("Difficult Study")
+                            Text(vm.isArabic ? "صعب (د)" : "Difficult (S)")
                                 .font(.subheadline.weight(.semibold))
                                 .multilineTextAlignment(.center)
                         }
@@ -216,7 +243,7 @@ struct ContentView: View {
                             Image(systemName: "exclamationmark.circle.fill")
                                 .font(.title2)
                                 .foregroundStyle(.pink)
-                            Text("Difficult Quiz")
+                            Text(vm.isArabic ? "صعب (س)" : "Difficult (Q)")
                                 .font(.subheadline.weight(.semibold))
                                 .multilineTextAlignment(.center)
                         }
@@ -239,7 +266,7 @@ struct ContentView: View {
                             Image(systemName: "book.fill")
                                 .font(.title2)
                                 .foregroundStyle(.purple)
-                            Text("Study")
+                            Text(vm.isArabic ? "مذاكرة" : "Study")
                                 .font(.subheadline.weight(.semibold))
                                 .multilineTextAlignment(.center)
                         }
@@ -260,7 +287,7 @@ struct ContentView: View {
                             Image(systemName: "pin.fill")
                                 .font(.title2)
                                 .foregroundStyle(.orange)
-                            Text("Saved")
+                            Text(vm.isArabic ? "محفوظ (د + س)" : "Bookmarked (S + Q)")
                                 .font(.subheadline.weight(.semibold))
                                 .multilineTextAlignment(.center)
                         }
@@ -271,6 +298,10 @@ struct ContentView: View {
                     }
                     .buttonStyle(.plain)
                 }
+
+                Text(vm.isArabic ? "د = مذاكرة | س = اختبار" : "S = Study | Q = Quiz")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
             }
             .appCard()
             .padding(.horizontal)
@@ -280,6 +311,36 @@ struct ContentView: View {
         .padding(.top, 20)
         .sheet(isPresented: $showHistory) {
             HistoryView(vm: vm, onClose: { showHistory = false })
+        }
+        .sheet(isPresented: $showTranslationInfo) {
+            VStack(spacing: 16) {
+                Text(vm.isArabic ? "ملاحظة حول الترجمة" : "About translations")
+                    .font(.title2.bold())
+                    .multilineTextAlignment(.center)
+
+                Text(
+                    vm.isArabic
+                    ? "الأسئلة باللغة الإنجليزية مطابقة لنص وزارة الداخلية. النسخة العربية مترجمة من الإنجليزية وقد تختلف صياغتها قليلًا عن نص موقع الوزارة."
+                    : "English questions match the official MOI wording. The Arabic version is translated from English and may differ slightly from the wording on the MOI site."
+                )
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(vm.isArabic ? .trailing : .leading)
+                .frame(maxWidth: .infinity, alignment: vm.isArabic ? .trailing : .leading)
+
+                Button {
+                    showTranslationInfo = false
+                } label: {
+                    Text(vm.isArabic ? "حسنًا" : "Got it")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(.ultraThickMaterial)
+                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                }
+                .buttonStyle(.plain)
+                .padding(.top, 8)
+            }
+            .padding()
         }
 //        .overlay(alignment: .top) { // CONFETTI TEST
 //            if confettiTick > 0 { // CONFETTI TEST

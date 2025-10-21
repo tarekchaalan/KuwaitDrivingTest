@@ -30,6 +30,9 @@ final class QuizViewModel: ObservableObject {
     // Loaded pool
     private(set) var allQuestions: [QuizQuestion] = []
 
+    // Language
+    @Published private(set) var isArabic: Bool = false
+
     // Quiz mode
     @Published private(set) var quizMode: QuizMode = .standard
 
@@ -53,10 +56,18 @@ final class QuizViewModel: ObservableObject {
     @Published private(set) var history: [QuizAttempt] = []
 
     init() {
-        self.allQuestions = QuestionLoader.load()
+        self.allQuestions = QuestionLoader.load(arabic: isArabic)
         // Keep deterministic order
         loadPinned()
         loadHistory()
+    }
+
+    func toggleLanguage() {
+        isArabic.toggle()
+        // Reload pool
+        allQuestions = QuestionLoader.load(arabic: isArabic)
+        // Reset to home
+        state = .idle
     }
 
     func setQuestionCount(_ count: Int) {
@@ -169,7 +180,14 @@ final class QuizViewModel: ObservableObject {
 
     // MARK: - Difficult (keyword-based)
     private func difficultKeywords() -> [String] {
-        ["imprisonment", "exceeding", "kd", "kwd", "fine", "article", "articles", "impound", "punishable", "court"]
+        if isArabic {
+            // Arabic equivalents for difficulty-related terms
+            return [
+                "سجن", "حبس", "تجاوز", "غرامة", "مادة", "مواد", "حجز", "مصادرة", "معاقب", "محكمة", "دينار", "كويتي"
+            ]
+        } else {
+            return ["imprisonment", "exceeding", "kd", "kwd", "fine", "article", "articles", "impound", "punishable", "court"]
+        }
     }
 
     private func isDifficult(_ q: QuizQuestion) -> Bool {
@@ -275,11 +293,14 @@ final class QuizViewModel: ObservableObject {
 
     private func finishQuiz() {
         let total = questions.count
+        // If a critical was answered wrong, only count up to the current question as answered
+        let answeredCount = answeredCriticalWrong ? (currentIndex + 1) : total
         let passingScore = Int(ceil(passThreshold * Double(total)))
         let passed = !answeredCriticalWrong && (correctCount >= passingScore)
         let result = QuizResult(
             total: total,
             correct: correctCount,
+            answered: answeredCount,
             passed: passed,
             failedCritical: answeredCriticalWrong,
             passingScore: passingScore

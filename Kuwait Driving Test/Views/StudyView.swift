@@ -16,7 +16,7 @@ struct StudyView: View {
     @State private var showAnswer = false
     @State private var tappedIndex: Int? = nil
 
-    private let tabs = ["All", "Regular", "T/F", "Images", "Critical"]
+    private var tabs: [String] { vm.isArabic ? ["الكل", "عادي", "صح/خطأ", "صور", "حرج"] : ["All", "Regular", "T/F", "Images", "Critical"] }
 
         private var filteredQuestions: [QuizQuestion] {
         switch selectedTab {
@@ -57,7 +57,7 @@ struct StudyView: View {
                     Image(systemName: "questionmark.circle")
                         .font(.system(size: 48))
                         .foregroundStyle(.secondary)
-                    Text("No questions in this category")
+                    Text(vm.isArabic ? "لا توجد أسئلة في هذا القسم" : "No questions in this category")
                         .font(.headline)
                         .foregroundStyle(.secondary)
                 }
@@ -65,11 +65,11 @@ struct StudyView: View {
             } else {
                             // Question counter and controls
             HStack {
-                Text("\(safeCurrentIndex + 1) of \(filteredQuestions.count)")
+                Text(vm.isArabic ? "\(safeCurrentIndex + 1) من \(filteredQuestions.count)" : "\(safeCurrentIndex + 1) of \(filteredQuestions.count)")
                     .font(.subheadline)
                     .foregroundStyle(.primary)
                 Spacer()
-                Button("Random") {
+                Button(vm.isArabic ? "عشوائي" : "Random") {
                     currentIndex = Int.random(in: 0..<filteredQuestions.count)
                     showAnswer = false
                     tappedIndex = nil
@@ -188,7 +188,7 @@ struct StudyView: View {
                         if !showAnswer { tappedIndex = nil }
                     }
                 } label: {
-                    Label(showAnswer ? "Hide Answer" : "Show Answer",
+                    Label(showAnswer ? (vm.isArabic ? "إخفاء الإجابة" : "Hide Answer") : (vm.isArabic ? "عرض الإجابة" : "Show Answer"),
                           systemImage: showAnswer ? "eye.slash" : "eye")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
@@ -207,7 +207,7 @@ struct StudyView: View {
                             tappedIndex = nil
                         }
                     } label: {
-                        Label("Previous", systemImage: "chevron.left")
+                        Label(vm.isArabic ? "السابق" : "Previous", systemImage: "chevron.left")
                             .font(.headline)
                             .frame(maxWidth: .infinity)
                             .padding()
@@ -224,7 +224,7 @@ struct StudyView: View {
                             tappedIndex = nil
                         }
                     } label: {
-                        Label("Next", systemImage: "chevron.right")
+                        Label(vm.isArabic ? "التالي" : "Next", systemImage: "chevron.right")
                             .font(.headline)
                             .frame(maxWidth: .infinity)
                             .padding()
@@ -239,7 +239,7 @@ struct StudyView: View {
                 Button {
                     onExit()
                 } label: {
-                    Label("Exit Study Mode", systemImage: "xmark.circle.fill")
+                    Label(vm.isArabic ? "الخروج من وضع المذاكرة" : "Exit Study Mode", systemImage: "xmark.circle.fill")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -251,7 +251,7 @@ struct StudyView: View {
             }
             .padding(.horizontal)
         }
-        .navigationTitle("Study Mode")
+        .navigationTitle(vm.isArabic ? "وضع المذاكرة" : "Study Mode")
         .navigationBarTitleDisplayMode(.inline)
         .onChange(of: selectedTab) { _, _ in
             currentIndex = 0

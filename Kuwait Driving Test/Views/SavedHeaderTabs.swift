@@ -7,8 +7,8 @@ struct SavedHeaderTabs: View {
     var body: some View {
         VStack(spacing: 8) {
             Picker("Mode", selection: $selected) {
-                Text("Study").tag(0)
-                Text("Quiz").tag(1)
+                Text(vm.isArabic ? "مذاكرة" : "Study").tag(0)
+                Text(vm.isArabic ? "اختبار" : "Quiz").tag(1)
             }
             .pickerStyle(.segmented)
             .onChange(of: selected) { oldValue, newValue in
@@ -20,7 +20,7 @@ struct SavedHeaderTabs: View {
             if selected == 0 {
                 // Study-like header: show simple count
                 HStack {
-                    Text("Saved: \(vm.questions.count)")
+                    Text(vm.isArabic ? "المحفوظ: \(vm.questions.count)" : "Saved: \(vm.questions.count)")
                         .font(.headline)
                     Spacer()
                 }
@@ -31,14 +31,14 @@ struct SavedHeaderTabs: View {
                 // Use regular quiz header for progress when in Quiz tab
                 HStack {
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("Question \(vm.currentIndex + 1) of \(vm.questions.count)")
+                        Text(vm.isArabic ? "سؤال \(vm.currentIndex + 1) من \(vm.questions.count)" : "Question \(vm.currentIndex + 1) of \(vm.questions.count)")
                             .font(.headline)
                         ProgressView(value: vm.progress)
                             .tint(.white)
                     }
                     Spacer()
                     VStack(alignment: .trailing) {
-                        Text("Score")
+                        Text(vm.isArabic ? "النتيجة" : "Score")
                             .font(.caption).foregroundStyle(.secondary)
                         Text("\(vm.correctCount)")
                             .font(.headline)

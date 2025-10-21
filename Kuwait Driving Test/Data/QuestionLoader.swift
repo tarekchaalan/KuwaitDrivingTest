@@ -9,8 +9,13 @@ import Foundation
 
 enum QuestionLoader {
     static func load() -> [QuizQuestion] {
-        guard let url = Bundle.main.url(forResource: "Questions", withExtension: "json") else {
-            assertionFailure("Questions.json missing in bundle")
+        load(arabic: false)
+    }
+
+    static func load(arabic: Bool) -> [QuizQuestion] {
+        let resource = arabic ? "Questions.ar" : "Questions"
+        guard let url = Bundle.main.url(forResource: resource, withExtension: "json") else {
+            assertionFailure("\(resource).json missing in bundle")
             return []
         }
         do {
@@ -18,7 +23,7 @@ enum QuestionLoader {
             let decoder = JSONDecoder()
             return try decoder.decode([QuizQuestion].self, from: data)
         } catch {
-            assertionFailure("Failed to decode Questions.json: \(error)")
+            assertionFailure("Failed to decode \(resource).json: \(error)")
             return []
         }
     }

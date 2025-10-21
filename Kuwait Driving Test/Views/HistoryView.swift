@@ -14,20 +14,23 @@ struct HistoryView: View {
     }
     private var averageScore: Double {
         guard totalAttempts > 0 else { return 0 }
-        let totalCorrect = attempts.reduce(0) { $0 + $1.correct }
-        let totalQuestions = attempts.reduce(0) { $0 + $1.total }
-        return totalQuestions == 0 ? 0 : Double(totalCorrect) / Double(totalQuestions)
+        let totals = attempts.reduce(into: (correct: 0, denom: 0)) { acc, a in
+            acc.correct += a.correct
+            let denom = (a.failedCritical && !a.wrongQuestionIds.isEmpty) ? (a.correct + a.wrongQuestionIds.count) : a.total
+            acc.denom += denom
+        }
+        return totals.denom == 0 ? 0 : Double(totals.correct) / Double(totals.denom)
     }
 
     var body: some View {
         VStack(spacing: 16) {
             HStack {
                 Button(action: onClose) {
-                    Label("Back", systemImage: "chevron.left")
+                    Label(vm.isArabic ? "رجوع" : "Back", systemImage: "chevron.left")
                 }
                 .buttonStyle(.plain)
                 Spacer()
-                Text("History & Analytics")
+                Text(vm.isArabic ? "السجل والإحصائيات" : "History & Analytics")
                     .font(.headline)
                 Spacer()
                 Spacer().frame(width: 44) // balance
@@ -35,9 +38,9 @@ struct HistoryView: View {
 
             // Summary cards
             HStack(spacing: 12) {
-                summaryCard(title: "Attempts", value: "\(totalAttempts)")
-                summaryCard(title: "Pass Rate", value: String(format: "%.0f%%", passRate * 100))
-                summaryCard(title: "Avg Score", value: String(format: "%.0f%%", averageScore * 100))
+                summaryCard(title: vm.isArabic ? "المحاولات" : "Attempts", value: "\(totalAttempts)")
+                summaryCard(title: vm.isArabic ? "نسبة النجاح" : "Pass Rate", value: String(format: "%.0f%%", passRate * 100))
+                summaryCard(title: vm.isArabic ? "المعدل" : "Avg Score", value: String(format: "%.0f%%", averageScore * 100))
             }
 
             if attempts.isEmpty {
@@ -45,7 +48,7 @@ struct HistoryView: View {
                     Image(systemName: "chart.bar.doc.horizontal")
                         .font(.system(size: 42))
                         .foregroundStyle(.secondary)
-                    Text("No attempts yet")
+                    Text(vm.isArabic ? "لا توجد محاولات بعد" : "No attempts yet")
                         .font(.headline)
                         .foregroundStyle(.secondary)
                 }
@@ -74,17 +77,28 @@ struct HistoryView: View {
                                 }
                                 Spacer()
                                 VStack(alignment: .trailing, spacing: 4) {
-                                    Text("\(a.correct)/\(a.total)")
+                                    let denom = (a.failedCritical && !a.wrongQuestionIds.isEmpty) ? (a.correct + a.wrongQuestionIds.count) : a.total
+                                    Text(vm.isArabic ? "\(a.correct)/\(denom)  |  (\(a.total))" : "\(a.correct)/\(denom)  |  (\(a.total))")
                                         .font(.subheadline)
                                     HStack(spacing: 6) {
                                         if a.failedCritical {
-                                            Label("Critical Fail", systemImage: "exclamationmark.triangle.fill")
-                                                .foregroundStyle(.yellow)
-                                                .font(.caption)
+                                            HStack(spacing: 4) {
+                                                Image(systemName: "exclamationmark.triangle.fill")
+                                                    .foregroundStyle(.yellow)
+                                                    .font(.caption2)
+                                                Text(vm.isArabic ? "فشل لسؤال حرج" : "Critical Fail")
+                                                    .font(.caption.weight(.semibold))
+                                                    .foregroundStyle(.yellow)
+                                            }
+                                        } else if a.passed && a.correct == a.total {
+                                            Text(vm.isArabic ? "مثالي" : "Perfect")
+                                                .font(.caption.weight(.semibold))
+                                                .foregroundStyle(.green)
+                                        } else {
+                                            Text(a.passed ? (vm.isArabic ? "ناجح" : "Passed") : (vm.isArabic ? "راسب" : "Failed"))
+                                                .font(.caption.weight(.semibold))
+                                                .foregroundStyle(a.passed ? .green : .red)
                                         }
-                                        Text(a.passed ? "Passed" : "Failed")
-                                            .font(.caption.weight(.semibold))
-                                            .foregroundStyle(a.passed && !a.failedCritical ? .green : .red)
                                     }
                                 }
                             }
@@ -92,8 +106,8 @@ struct HistoryView: View {
                         }
                         .buttonStyle(.plain)
                         .disabled(a.correct == a.total)
-                        .opacity(a.correct == a.total ? 0.5 : 1)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .listRowSeparator(.visible)
                     }
                     .onDelete { offsets in vm.removeHistory(at: offsets) }
                 }

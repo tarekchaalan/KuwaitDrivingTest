@@ -49,6 +49,7 @@ struct QuizQuestion: Identifiable, Decodable, Hashable {
 struct QuizResult: Equatable {
     let total: Int
     let correct: Int
+    let answered: Int
     let passed: Bool
     let failedCritical: Bool
     let passingScore: Int

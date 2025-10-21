@@ -17,7 +17,7 @@ struct ResultView: View {
                 header
 
                 VStack(spacing: 14) {
-                    metricRow(title: "Score", value: "\(result.correct)/\(result.total)")
+                    metricRow(title: "Score", value: result.failedCritical ? "\(result.correct)/\(result.answered)" : "\(result.correct)/\(result.total)")
                     metricRow(title: "Passing Score", value: "≥ \(result.passingScore)")
                     Button {
                         onReviewWrong()

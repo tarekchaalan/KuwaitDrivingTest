@@ -50,7 +50,7 @@ struct QuizView: View {
                         Image(systemName: "pin.slash")
                             .font(.system(size: 40))
                             .foregroundStyle(.secondary)
-                        Text("No saved questions yet")
+                        Text(vm.isArabic ? "لا توجد أسئلة محفوظة" : "No saved questions yet")
                             .font(.headline)
                             .foregroundStyle(.secondary)
                     }
@@ -80,13 +80,13 @@ struct QuizView: View {
             }
             .padding()
             .transition(.opacity.combined(with: .scale))
-            .alert("Exit Quiz?", isPresented: $showExitAlert) {
-                Button("Cancel", role: .cancel) { }
-                Button("Exit", role: .destructive) {
+            .alert(vm.isArabic ? "الخروج من الاختبار؟" : "Exit Quiz?", isPresented: $showExitAlert) {
+                Button(vm.isArabic ? "إلغاء" : "Cancel", role: .cancel) { }
+                Button(vm.isArabic ? "خروج" : "Exit", role: .destructive) {
                     vm.restart()
                 }
             } message: {
-                Text("Are you sure you want to exit? All progress will be lost.")
+                Text(vm.isArabic ? "هل أنت متأكد من الخروج؟ سيتم فقدان التقدم." : "Are you sure you want to exit? All progress will be lost.")
             }
         }
     }
@@ -94,14 +94,14 @@ struct QuizView: View {
     private var header: some View {
         HStack {
             VStack(alignment: .leading, spacing: 6) {
-                Text("Question \(vm.currentIndex + 1) of \(vm.questions.count)")
+                Text(vm.isArabic ? "سؤال \(vm.currentIndex + 1) من \(vm.questions.count)" : "Question \(vm.currentIndex + 1) of \(vm.questions.count)")
                     .font(.headline)
                 ProgressView(value: vm.progress)
                     .tint(.white)
             }
             Spacer()
             VStack(alignment: .trailing) {
-                Text("Score")
+                Text(vm.isArabic ? "النتيجة" : "Score")
                     .font(.caption).foregroundStyle(.secondary)
                 Text("\(vm.correctCount)")
                     .font(.headline)
@@ -190,7 +190,7 @@ struct QuizView: View {
     private func savedStudyControls() -> some View {
         VStack(spacing: 16) {
             Button { toggleSavedStudyAnswer() } label: {
-                Label(savedStudyShowAnswer ? "Hide Answer" : "Show Answer",
+                Label(savedStudyShowAnswer ? (vm.isArabic ? "إخفاء الإجابة" : "Hide Answer") : (vm.isArabic ? "عرض الإجابة" : "Show Answer"),
                       systemImage: savedStudyShowAnswer ? "eye.slash" : "eye")
                     .font(.headline)
                     .frame(maxWidth: .infinity)
@@ -202,7 +202,7 @@ struct QuizView: View {
 
             HStack(spacing: 20) {
                 Button { savedStudyPrev() } label: {
-                    Label("Previous", systemImage: "chevron.left")
+                    Label(vm.isArabic ? "السابق" : "Previous", systemImage: "chevron.left")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -213,7 +213,7 @@ struct QuizView: View {
                 .disabled(vm.currentIndex == 0)
 
                 Button { savedStudyNext() } label: {
-                    Label("Next", systemImage: "chevron.right")
+                    Label(vm.isArabic ? "التالي" : "Next", systemImage: "chevron.right")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -225,7 +225,7 @@ struct QuizView: View {
             }
 
             Button { vm.restart() } label: {
-                Label("Exit", systemImage: "xmark.circle.fill")
+                Label(vm.isArabic ? "خروج" : "Exit", systemImage: "xmark.circle.fill")
                     .font(.headline)
                     .frame(maxWidth: .infinity)
                     .padding()
@@ -280,7 +280,7 @@ struct QuizView: View {
                 impactFeedback.impactOccurred()
                 showExitAlert = true
             } label: {
-                Label("Exit", systemImage: "xmark")
+                Label(vm.isArabic ? "خروج" : "Exit", systemImage: "xmark")
                     .frame(maxWidth: .infinity)
                     .padding()
             }
@@ -291,7 +291,7 @@ struct QuizView: View {
             Button {
                 vm.submitAndAdvance()
             } label: {
-                Label(vm.currentIndex == vm.questions.count - 1 ? "Finish" : "Next",
+                Label(vm.isArabic ? (vm.currentIndex == vm.questions.count - 1 ? "إنهاء" : "التالي") : (vm.currentIndex == vm.questions.count - 1 ? "Finish" : "Next"),
                       systemImage: "arrow.right")
                     .frame(maxWidth: .infinity)
                     .padding()
@@ -300,7 +300,7 @@ struct QuizView: View {
             .background(vm.selectedAnswerIndex == nil ? Color.gray.opacity(0.3) : Color.accentColor)
             .foregroundStyle(.white)
             .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .accessibilityHint("Submit selected answer and move to next")
+            .accessibilityHint(vm.isArabic ? "إرسال الإجابة والانتقال للتالي" : "Submit selected answer and move to next")
         }
         .font(.headline)
     }
