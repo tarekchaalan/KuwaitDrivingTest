@@ -47,7 +47,7 @@ struct ContentView: View {
                     Button {
                         vm.toggleLanguage()
                     } label: {
-                        Text(vm.isArabic ? "A" : "ع")
+                        Text(vm.isArabic ? "E" : "ع")
                             .font(.title3)
                             .padding(.leading, 5)
                             .padding(.vertical, 2)
